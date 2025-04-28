@@ -38,8 +38,14 @@
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
 	          <!-- <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li> -->
-	          <!--<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li> -->
-	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Other Interests</span></a></li>
+	          <li class="nav-item"><a href="#self-learning" class="nav-link"><span>Self-Learning</span></a></li> 
+	          <li class="nav-item" id="otherInterest"><a href="#blog-section" class="nav-link"><span>Personal Interests</span></a></li>
+
+	           <script>
+           document.getElementById("otherInterest").addEventListener("click", function() {
+            window.location.href = "other_interests.html";
+        });
+    </script>
 	     
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
@@ -86,7 +92,6 @@
     	<div class="container">
     		<div class="row d-flex no-gutters">
     			<div class="col-md-6 col-lg-6 d-flex">
-
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
 	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/ocean.jpg); margin-top: 100px;">
@@ -108,7 +113,7 @@
 		            	<li class="d-flex"><span>Name:</span> <span>Nazmun Nahar (Ocean)</span></li>
 		            	<li class="d-flex"><span>Location:</span> <span>Dhaka, Bangladesh</span></li>
 		            	<li class="d-flex"><span>Email:</span> <span>oceanrahan@gmail.com / ocean.rahan@medaihealth.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+8801670802317</span></li>
+		            	<!--<li class="d-flex"><span>Phone: </span> <span>+8801670</span></li>-->
 		            </ul>
 		          </div>
 		        </div>
@@ -146,7 +151,7 @@
 					  </nav>
 					</div>
 					<div class="col-md-9">
-                        <div id="page-4" class="page four">
+              <div id="page-4" class="page four">
 					    <h2 class="heading" style="color: #40534C";>Research Interests</h2>
 					    <div class="progress-wrap ftco-animate">
 					    	<ul style="color: #787878; font-weight: bold;">
@@ -226,15 +231,16 @@
 		    					<span class="date">2021-Present</span>
 		    					<h2 style="font-size:20px;">Research and Development Engineer | Data Science | NLP | Cloud </h2>
 		    					<span class="position"><a href="https://www.medaihealth.com/">MedAi Pvt. Limited</a></span>
-		    					<ul style="color: #353935; font-size:14px;">
+		    					<ul style="color: #353935; font-size:14px;">  
 		    						<li><strong>Clinical Decision Support System (CDSS)</strong> and <strong>Symptom Checker Module.</strong></li>
 		    						<li><strong>Knowledge Graph</strong> Database (TypeDB) to represent biomedical entities and their relationships such as patients’ diseases, symptoms (phenotypes), drugs and diagnostic tests.</li>
 		    						<li>Curating symptoms across multiple languages, exploring symptom variations, and examining relationships between symptoms.</li>
-		    					    <li><strong>Medical Assistant Chatbot</strong> directing patients to the appropriate specialization.</li>
-		    					    <li>Evaluation of disease recommendation system using patient vignette cases to validate the accuracy of the symptom checker module.</li>
-		    					    <li>Implementation of full backend architecture of AmarDoctor APP, using Django <strong>REST Framework</strong></li>
+		    					  <li><strong>Medical Assistant Chatbot</strong> directing patients to the appropriate specialization.</li>
+		    					  <li>Quantitative evaluation of disease recommendation system using patient vignette cases to validate the accuracy of the symptom checker module.</li>
+		    					  <li>Implementation of full backend architecture of AmarDoctor APP, using Django <strong>REST Framework.</strong></li>
 		    						<li>Utilizing <strong>SQLite</strong> and <strong>PostgreSQL</strong> for managing credentials and client data</li>
 		    						<li>Deploying backend services on <strong>EC2 instances.</strong>, utilizing <strong>API gateway</strong>, <strong>load balancers</strong> and <strong>auto scaling groups.</strong></li>   
+		    						<li>Improved the AmarDoctor app's user experience through AI implementation, specifically by developing a system for personalized food recommendations and a GenAI-driven conversational API to better understand patient needs.</li>
 		    					</ul>
 		    				</div>
 	    				</div>
@@ -357,10 +363,33 @@
 		    					<p style="font-size: 15px; color: black;">This symptom checker module serves as an intelligent tool that facilitates the symptom selection process by suggesting relevant symptoms based on the input provided by the patient. <br>
 		    					Once the patient has completed entering their symptoms, the module prompts additional questions tailored to the patient's responses (yes, no, or don't know). Subsequently, it presents provisional diagnoses along with pertinent specialization recommendations, guiding the patient towards the appropriate healthcare professional.</p>
 		    					<br>
+		    					<p>
+		    						<video autoplay loop muted controls src="images/Voice Interactive.mp4" width="750" height="415"></video>
+
+		    						</p>
+		    					<!--
 		    					<img src="images/ss_dq.png" style="width: 700px; height: 640px;">
-                                <!--<figcaption style="margin-left:90px; color: #3b51f7; font-weight: bold;"><small>Fig: Flow of Symptom Checker and Disease Prognosis Tool</small></figcaption>-->
+                                <figcaption style="margin-left:90px; color: #3b51f7; font-weight: bold;"><small>Fig: Flow of Symptom Checker and Disease Prognosis Tool</small></figcaption>-->
 	    					</div>
 	    				</div>
+
+	    				<div class="resume-wrap d-flex ftco-animate">
+					    	<div>
+		    					<!--<span class="date">2021-2022</span>-->
+		    					<h3 style="font-size: 20px; font-weight: bold;">Smart Food Guidance: Personalized via Image Recognition and Medical Records</h3>
+		    					<!--<span class="position">MedAi Ltd. UK</span> -->
+		    					<p style="font-size: 15px; color: black;">A system provides a user interface for generating personalized food intake recommendations informed by an individual's medical history. The interface features image recognition powered by computer vision, allowing users to upload or select food images. The system identifies potential matches (up to 10) for user confirmation before delivering specific advice on increasing, reducing, or avoiding the food based on their past diagnoses.</p>
+		    					<br>
+		    					<p>
+		    						<video autoplay loop muted controls src="images/Food.mp4" width="750" height="415"></video>
+
+		    						</p>
+		    					<!--
+		    					<img src="images/ss_dq.png" style="width: 700px; height: 640px;">
+                                <figcaption style="margin-left:90px; color: #3b51f7; font-weight: bold;"><small>Fig: Flow of Symptom Checker and Disease Prognosis Tool</small></figcaption>-->
+	    					</div>
+	    				</div>
+	    				
 	    				
 	    				<div class="resume-wrap d-flex ftco-animate">
 					    	<div class="text pl-3">
@@ -425,7 +454,7 @@
 					    	<div class="text pl-3">
 		    				<h2 style="font-size: 20px; font-weight: bold;">RFID Based Mobile Charging System (2017)</h2>
 		    				 <p style="font-size: 15px; color:black;">The system allows phone charging upon successful RFID identity validation. Presenting a programmed, valid white tag to the reader grants power access. An invalid tag or repeated switch toggling without validation will not enable charging.</p> <br> 
-		    				 <p><iframe width="650" height="415"src="https://youtube.com/embed/3bjlru9CC1U?si=XexMlYs0CZU9BHG8"></iframe></p>
+		    				 <p><iframe width="750" height="415"src="https://youtube.com/embed/3bjlru9CC1U?si=XexMlYs0CZU9BHG8"></iframe></p>
 		    					<!--<br>
 		    					<figcaption style="margin-left:30px; color: #3b51f7; font-weight: bold;"><small>Fig: Client Management System</small></figcaption>-->
 		    					
@@ -462,7 +491,47 @@
     	</div>
     </section>
 
+    </section>
 
+<section class="ftco-section ftco-no-pb goto-here" id="self-learning">
+
+<div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <nav id="navi">
+              <ul>
+                <li><a href="#page-8">Courses</a></li>
+                <li><a href="#page-9">Books</a></li>
+              </ul>
+            </nav>
+          </div>
+            <div class="col-md-9">
+            <div id="page-8" class="page four">
+              <h2 class="heading" style="color: #40534C";>Courses</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <p style="color: #353935;">Coming Soon</p>
+              </div>
+            </div>
+
+  <div id="page-9" class="page four">
+              <h2 class="heading" style="color: #40534C">Books</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+              
+		            <p style="color: #353935;">Coming Soon</p>
+	        
+        </div>
+    	
+  </div>
+      
+  </div>
+
+</div>
+</div>
+</section>
+
+
+
+    <!--
     <section class="ftco-section" id="blog-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -482,7 +551,7 @@
         
         </div>
       </div>
-  
+  -->
 <section class="ftco-section ftco-partner" id='contact-section'>
 	<div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
