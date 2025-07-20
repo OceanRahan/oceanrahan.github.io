@@ -9,18 +9,51 @@
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/ionicons.min.css">
-    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+   
+    <style>
+        /* Custom CSS for the Pan Effect */
+        .image-container {
+            overflow: hidden; /* Ensures the scaled image doesn't overflow its parent */
+            border-radius: 0.4rem; /* Rounded corners for the image container */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 300px; /* Fixed width for the image container */
+            height: 250px;
+
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            transition: transform 0.7s ease-in-out; /* Smooth transition for the pan effect */
+        }
+
+        .image-container:hover img {
+            transform: scale(1.30); /* Slightly zooms in the image on hover */
+            /* You could also try a subtle translate for a different pan: */
+            /* transform: translateY(-5%) scale(1.05); */
+        }
+
+         .image-grid-wrapper .row {
+            margin-left: -0.5rem; /* Counteract default Bootstrap row padding */
+            margin-right: -0.5rem; /* Counteract default Bootstrap row padding */
+        }
+        .image-grid-wrapper .col-12,
+        .image-grid-wrapper .col-sm-6,
+        .image-grid-wrapper .col-md-4 {
+            padding-left: 0.5rem; /* Adjust padding for columns */
+            padding-right: 0.5rem; /* Adjust padding for columns */
+        }
+
+    </style>
+
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
      
@@ -49,8 +82,6 @@
 	      </div>
 	    </div>
 	  </nav>
-
-	 
     <br>
     <br>
     <br>
@@ -62,15 +93,68 @@
           <div class="col-md-3">
             <nav id="navi">
               <ul>
-                <li><a href="#page-1">Reading Books</a></li>
-                <li><a href="#page-2">Cats</a></li>
+                <li><a href="#page-1">Cats</a></li>
+                <li><a href="#page-2">Reading Books</a></li>
                 <li><a href="#page-3">Photography</a></li>
                 <li><a href="#page-4">Dramatic Arts</a></li>
               </ul>
             </nav>
           </div>
             <div class="col-md-9">
-            <div id="page-1" class="page four">
+              <div id="page-1" class="page four">
+              <h2 class="heading" style="color: #40534C">Cats</h2>
+              <div class="resume-wrap d-flex ftco-animate">
+                <p style="color: #353935;">My lifelong affection for cats began in my early childhood, around the age of five or six, when my father brought one home as a mouser. This marked my first interaction with these excessively adorable creatures, and as we subsequently welcomed many cats into our home, I cultivated an unusual and profound empathy for them, feeling deeply connected from a very young age. <br> <br> Now, I have two feline daughters, <strong>Lochon</strong> (the grumpy one), who is three years old, and <strong>Floria</strong></a>, who is a year and a half. Their personalities are quite different: the younger Floria is a quiet, sleep-loving cat, while Lochon, the older one, is vocal and constantly dashes around the house in seemingly endless loops. Occasionally, Floria will chase after her. Lochon tends to be anxious and paranoid, whereas Floria is very relaxed, and they don't have a harmonious relationship</p>          
+               </div>
+
+
+  <div class="image-grid-wrapper container mx-auto py-8">
+                        <div class="row">
+                            <!-- Row 1 - 3 images -->
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/lochon1.jpg">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/lochon2.jpg">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/lochon3.jpg">
+                                </div>
+                            </div>
+                        </div>
+                      </br>
+                        <div class="row">
+                            <!-- Row 2 - 3 images -->
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/floria1.jpg">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/floria2.jpg">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                                <div class="image-container">
+                                    <img src="images/floria3.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+             </div>
+               <br>
+           <hr>
+
+
+            <div id="page-2" class="page four">
               <h2 class="heading" style="color: #40534C";>Reading Books</h2>
               <div class="resume-wrap d-flex ftco-animate">
                 <p style="color: #353935;"> When I was very young, I loved fairy tales. They felt like magical doors to amazing places, and I couldn't wait to read what happened next. I always wanted more, but soon I grew older and had other things to do.
@@ -87,17 +171,6 @@
               </div>
             </div>
 
-  <div id="page-2" class="page four">
-              <h2 class="heading" style="color: #40534C">Cats</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-              
-		            <p style="color: #353935;">My lifelong affection for cats began in my early childhood, around the age of five or six, when my father brought one home as a mouser. This marked my first interaction with these excessively adorable creatures, and as we subsequently welcomed many cats into our home, I cultivated an unusual and profound empathy for them, feeling deeply connected from a very young age. <br> <br> Now, I have two feline daughters, <strong>Lochon</strong> [<a href="https://drive.google.com/file/d/1zoFAxaUjAZIf_6D0e6BqGdHDXjC63Dkf/view?usp=drive_link">1</a>
-                <a href="https://drive.google.com/file/d/1QVA0B2-mBV7J3pcoBzj7H9ZUMVNo7nQ3/view?usp=drive_link">2 </a><a href="https://drive.google.com/file/d/17L4kiXZmrz7R8vhHR-7RMXZvfAfa43lP/view?usp=drive_link">3</a> <a href="https://drive.google.com/file/d/1s_tqf-W-2uCzUA1vV1iMDwbTYAeM0rgC/view?usp=drive_link"> 4</a>], who is three years old, and <strong>Floria</strong></a> [<a href="https://drive.google.com/file/d/13K4vZf9_0eP_w3xlU_FHVIGJWvnxnMNk/view?usp=sharing">1</a>
-                <a href="https://drive.google.com/file/d/1J1wa7n46vEufgVuGqzWO9xhWQS_AYwZt/view?usp=drive_link">2 </a><a href="https://drive.google.com/file/d/1ihMG56H1BeDtlYQ6G37JG49HtOptKQ6G/view?usp=drive_link">3</a> <a href="https://drive.google.com/file/d/1EMSxLqx0UMvLT2bVqLfNgERDETaAAMHL/view?usp=sharing"> 4</a>], who is a year and a half. Their personalities are quite different: the younger Floria is a quiet, sleep-loving cat, while Lochon, the older one, is vocal and constantly dashes around the house in seemingly endless loops. Occasionally, Floria will chase after her. Lochon tends to be anxious and paranoid, whereas Floria is very relaxed, and they don't have a harmonious relationship</p>
-	        
-        </div>
-    	
-  </div>
 
   <div id="page-3" class="page four">
               <h2 class="heading" style="color: #40534C">Photography</h2>
@@ -227,7 +300,9 @@ Reflecting on my younger years, living at home meant I often assumed the role of
        
           </div>
       </div>
-          
+
+
+           <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=KXkixfxWFTff9OPJwmnObEKPc0ffrs2k2uY3tM1UViE&cl=ffffff&w=a"></script>
     </footer>
     
   
@@ -249,6 +324,7 @@ Reflecting on my younger years, living at home meant I often assumed the role of
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
-  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=KXkixfxWFTff9OPJwmnObEKPc0ffrs2k2uY3tM1UViE&cl=ffffff&w=a"></script>
+
+  
   </body>
 </html>
