@@ -1,748 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Nazmun Nahar</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-     
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><span>O</span>cean</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <!-- <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li> -->
-	          <li class="nav-item"><a href="#self-learning" class="nav-link"><span>Self-Learning</span></a></li> 
-	          <li class="nav-item" id="otherInterest"><a href="#blog-section" class="nav-link"><span>Personal Interests</span></a></li>
-
-	           <script>
-           document.getElementById("otherInterest").addEventListener("click", function() {
-            window.location.href = "other_interests.html";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazmun Nahar | Healthcare AI Specialist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile-photo">
+                    <img src="images/img1.jpg" alt="Ocean" class="profile-img">
+                    <div>
+                    <div class="contact-grid-small">
+                       <div style="margin-left:20px;">
+                        <i class="fas fa-file-pdf"></i>
+                        <a href="images/Nazmun_Nahar.pdf" target="_blank" style="color:#E9E3DF";><strong>CV</strong></a>
+                    </div>
+                     <div>
+                        <i class="fas fa-graduation-cap"></i>
+                        <a href="https://scholar.google.com/citations?hl=en&user=oxADXwQAAAAJ" style="color:#E9E3DF;"><strong>Scholar</strong></a>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/nazmun-nahar-81670b149" style="color:#E9E3DF";><strong>LinkedIn</strong></a>
+                    </div>
+                    <div>
+                        <i class="fab fa-orcid"></i>
+                       
+                        <a href="https://orcid.org/0009-0003-3708-9029" target="_blank" style="color:#E9E3DF";><strong>ORCID</strong></a>
+                    </div>
+                   
+                </div>
+                </div>
+               <div>
+                        <i class="fas fa-envelope"></i>
+                        <a href="oceanrahan@gmail.com" style="color:#E9E3DF;"><strong>oceanrahan@gmail.com</strong></a>
+                    </div>
+                </div>
+                <h1>Nazmun Nahar</h1>
+                <p class="subtitle">R&D Software Engineer | Healthcare AI Specialist | Human-Centered Computing Researcher</p>
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#research">Research</a>
+                    <a href="#projects">Projects</a>
+                    <!--<a href="#education">Education</a>-->
+                    <a href="#personal-interest" id="other-interest">Personal Interests</a>
+                    <script>
+           document.getElementById("other-interest").addEventListener("click", function() {
+            window.location.href = "other.html";
         });
     </script>
-	     
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-
-	  <!--
-	  <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-          	<div class="text text-center">
-          		<span class="subheading">Hello! I am</span>
-		  				<h1>Nazmun <span style="color: #40534C">Nahar</span></h1>
-
-		  				
-		  				
-			  				<h2>I work with
-								  <span
-								     class="txt-rotate"
-								     data-period="1000"
-								     data-rotate='[ "Software tools with AI", "Data Science", "NLP"]'></span>
-								</h2>
-							
-							</div>
-							
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="mouse">
-				<a href="#" class="mouse-icon">
-					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-				</a>
-			</div>
-			#f2ebec
-    </section>
-    -->
-    <br>
-    <br>
-    <br>
+        </header>
 
-    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section" style="background-color: white; width: 1380px; margin-left: 20px;">
-    	<div class="container" style="height:500px;">
-    		<div class="row d-flex no-gutters" >
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<!--<div class="img-about img d-flex align-items-stretch">-->
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/new2.jpg); margin-top: 70px; opacity:0.75; height: 420px; width: 380px; margin-left:10px;">
-	    			
-	    					 <div class="col-sm ftco-animate">
-    				<a href="https://www.linkedin.com/in/nazmun-nahar-81670b149" class="partner"><img src="images/linkedin.png" style="height:35px; width: 35px; border-radius: 15%; margin-top: 500px; margin-left:30px;" alt="Colorlib Template"></a>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
+                    <p>I'm an R&D Software Engineer at <a href="https://medaihealth.com" style="color: blue;">MedAi Limited</a>, where I design AI-driven healthcare solutions focused on human-centered computing. My work is rooted in building culturally-aware, linguistically-inclusive digital health platforms to improve care accessibility for underserved communities.</p>
+                    
+                    <p>I’m passionate about bridging the gap between cutting-edge AI research and real-world challenges—particularly in mental health. My interests span machine learning, natural language processing, and user experience design, with a strong emphasis on ethical, inclusive, and human-responsive technologies.</p>
 
-    				<a href="oceanrahan@gmail.com" class="partner"><img src="images/gmail.png" style="height:35px; width:35px; border-radius: 15%; margin-top:500px; margin-left:45px;" alt="Colorlib Template"></a>
+                    <p>I earned my Bachelor’s degree in Computer Science and Engineering from Bangladesh University of Engineering and Technology (BUET). For my thesis, I worked under the supervision of Professor <a href="https://cse.buet.ac.bd/faculty_list/detail/mdmonirulislam">Dr. Md. Monirul Islam.</a> on <a href=https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link>Bengali Text Recognition Using Deep Learning</a>, where I built a dataset from printed Bengali documents and trained deep learning models using CNNs, RNNs, and LSTMs, achieving an accuracy of 87.3%.</p>
 
-    				<a href="https://scholar.google.com/citations?hl=en&user=oxADXwQAAAAJ" class="partner"><img src="images/scholar.png" style="height:35px; width:35px; border-radius: 15%; margin-left: 50px; margin-top:500px;" alt="Colorlib Template"></a>
+                    <p>Currently, my research explores the intersection of generative AI, mental health, and therapeutic visualization—with a focus on how emotionally personalized media can support trauma-informed care.</p>
+                        
+                    <div class="research-interests">
+                        <p><strong>Research Interests:</strong> AI/ML in Healthcare, Multimodal LLM, Mental Health, Human-Computer Interaction, Social Computing, Accessibility in Technology</p>
+                    </div>
+                </div>
+            </section>
 
-    					<a href="https://orcid.org/0009-0003-3708-9029" class="partner"><img src="images/orcid.png" style="height: 35px; width:35px; border-radius: 15%; margin-left: 44px; margin-top:500px;" alt="Colorlib Template"></a>
-
-
-    			</div>
- 
-  			
-	    				</div>	    
-    			</div>
-    			
-    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-    				<div class="row justify-content-start pb-3" style="margin-top:20px;">
-		          <div class="col-md-12 heading-section ftco-animate">
-		            <h2 class="mb-4" style="font-size:20px;">About me</h2>
-		            <p style="color: #353935; font-size:14px;">
-		            	As an R&D Software Engineer at <a href=https://medaihealth.com><strong>MedAi</strong></a>, I specialize in leveraging <strong>Data Science</strong> and <strong>AI</strong> within healthcare applications. My work centers on making digital health solutions more accessible, with particular expertise in <strong>human centerered computing</strong>. I played a key role in pioneering the first AI-powered digital health platform - <a href=https://www.amardoctor.health/><strong>AmarDoctor</strong></a> designed specifically for Bengali speakers, emphasizing <strong>accessibility</strong> and <strong>inclusivity</strong>. The platform incorporates advanced features including symptom assessment and clinical decision support capabilities. Beyond this, I manage MedAi's technical team, driving API design and cloud infrastructure development.
-                        </br>
-                        I'm driven by research that channels <strong>digital health</strong>, <strong>social computing</strong>, and <strong>AI (ML/NLP)</strong> to improve healthcare and wellbeing. My passion lies in creating human-centered technologies that deliver tangible, positive impact on people's lives.
-		            	</p>
-
-		            <!--<ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Nazmun Nahar (Ocean)</span></li>
-		            	<li class="d-flex"><span>Location:</span> <span>Dhaka, Bangladesh</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>oceanrahan@gmail.com / ocean.rahan@medaihealth.com</span></li>
-		     
-		            </ul>
-		            -->
-
-		             <p><a href="images/Nazmun_Nahar.pdf" class="btn btn-primary py-3 px-3" target="_blank"><span style="font-size:12px;">View CV</span></a></p>
-                   </p> 
-		          </div>
-		        </div>
-
-	          <!--<div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text" style="font-size: 15px;">
-                <p><a href="images/Nazmun_Nahar.pdf" class="btn btn-primary py-3 px-3" download="Nazmun_Nahar_CV">Download CV</a></p>
-                   </p> 
-              </div>
-	          </div>
-	          -->
-	        </div>
-        </div>
-    	</div>
-    </section>
-   </br>
- </br>
- </br>
- </br>
- </br>
- </br>
-  <br>
-  <br>
- 
- 
-    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-3">
-				    <nav id="navi">
-					    <ul>
-					      <li><a href="#page-4">Research Interests</a></li>
-					      <li><a href="#page-5">Publications</a></li>
-					      <li><a href="#page-7">Award and Achievements</a></li>
-					      <li><a href="#page-1">Education</a></li>
-					      <li><a href="#page-2">Experience</a></li>
-					      <li><a href="#page-3">Tech Stack</a></li>
-					      <li><a href="#page-6">Projects</a></li>
-					    </ul>
-					  </nav>
-					</div>
-					<div class="col-md-9">
-              <div id="page-4" class="page four">
-					    <h2 class="heading" style="color: #40534C; font-size:20px;">Research Interests</h2>
-					    <div class="progress-wrap ftco-animate">
-					    	<ul style="color: #787878; font-weight: bold; font-size:15px;">
-					    		<li>Digital Health</li>
-					    		<li>Human Computer Interaction</li>
-					    		<li>Mental Health</li>
-					    		<li>Human-centered AI</li>
-					    		<li>Data Science</li>
-					    		<li>Social Computing</li>
-
-					    	</ul>
-	    				</div>
-					  </div>
-             <div id="page-5" class="page five">
-					  	<h2 class="heading" style="color: #40534C; font-size:20px;">Publications</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-					    		<ol style="color: #000000">
-                  <li style="font-size:15px; ">
-		    					<!---<p style="color: #000000"><strong>Preprint</strong></p>-->
-		    					Shariar Kabir; <strong>Nazmun Nahar</strong>; Mamunur Rashid; Shyamasree Saha (2024). Automatic Speech Recognition for Biomedical Data in Bengali Language. <i>arXiv preprint arXiv:2406.12931]</i><a href=https://arxiv.org/abs/2406.12931> [pdf]</a>
-		    				</li>
-		    					<hr>
-		    					<li style="font-size:15px;">
-		    					<strong>Nazmun Nahar</strong>; Shariar Kabir; Sumaiya Tasnia Khan; Suparna Das; Shyamasree Saha; Mamunur Rashid. <strong>AmarDoctor</strong>: First Multilingual Digital Platform For AI-Driven Primary Care Triage And Patient Management System For Bengali Speakers. <a href=https://drive.google.com/file/d/10U_euLjn2Y10kf8FFXK4vgRbZFTjor1t/view?usp=drive_link> [pdf]</a></
-		    				</li>
-		    				
-		    				</ol style="color: #000000">
-	    					</div>
-	    				</div>
-					  
-
-                     <div id="page-7" class="page seven">
-					  	<h2 class="heading" style="color: #40534C; font-size:20px;">Award and Achievements</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-					    	  <ol>
-					    	  <li style="font-size:15px; color: black;">Our project <a href=https://amardoctor.health>AmarDoctor</a> has been selected as one of the six solvers for the <strong>MIT Solve Global Health Equity Challenge Award 2024</strong> out of nearly 2200+ projects worldwide.<a href="https://solve.mit.edu/challenges/2024-global-health-challenge/solutions/85842">[Solution]</a>
-					    		
-					    		<li style="font-size:15px; color:black;">University Merit Scholarship from BUET (2015-2019) </li>
-					    		<li style="font-size:15px; color: black;">Primary Government Scholarship, Dhaka Education Board, Bangladesh (2006)</li>
-	    					</div>
-	    				</div>
-
-					  <div id="page-1" class= "page one">
-					  	<h2 class="heading" style="color: #40534C; font-size:20px;">Education</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					<span class="date">2015-2019</span>
-		    					<h2 style="font-size:15px;">BSc in Computer Science and Engineering</h2>
-		    					<span class="position" style="font-size:15px;">Bangladesh University of Engineering & Technology(BUET)</span>
-		    					<br>
-		    					<br>
-		    					<p style="color: #353935; font-size:15px;"><strong>Thesis Project</strong>:  Bengali Text Recognition Using Deep Learning, under the supervision of Professor <strong>Dr. Md. Monirul Islam.</strong> For this project, I created a word image dataset from printed documents, annotated it, then trained deep neural networks on it using a variety of methods, including CNN, RNN, LRU, and others. <a href ="https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link">[Thesis]</a></p>
-		    					<br>
-		    					<p style="color: #353935; font-size:15px;"><strong>Coursework</strong>:  Artificial intelligence, Structured programming language, Object oriented programming language, Data Structures, Algorithms, Database, Computer architecture, Software engineering and information system design, Software development, Basic graph theory, VLSI Design, Theory of computation and others.</p>
-	    					</div>
-	    				</div>
-					  
-					  <div id="page-2" class= "page two">
-					  	<h2 class="heading" style="color: #40534C; font-size:20px;">Experience</h2>
-					  	<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					<span class="date">Nov, 2019-Mar, 2020</span>
-		    					<h2 style="font-size:17px">Teaching</h2>
-		    					<span class="position" style="font-size:15px;"><a href="https://www.bist.ac.bd/">Bangladesh Institute of Science & Technology (Part-Time)</a></span>
-		    					<ul style="color: #353935; font-size:15px;">
-		    						<li><strong>520223</strong>, Microprocessor and Assembly Languages</li>
-		    					    <li><strong>520224</strong>, Microprocessor and Assembly Languages Lab</li>
-		    					    <li><strong>540206</strong>, Computer Graphics Lab</li>
-		    					    <li><strong>540219</strong>, Network and Information Security</li>
-		    					</ul>
-		    				</div>
-	    				</div>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					<span class="date">2021-Present</span>
-		    					<h2 style="font-size:17px;">R&D Software Engineer | Data Science | AI | Cloud </h2>
-		    					<span class="position", style="font-size:15px;"><a href="https://www.medaihealth.com/">MedAi Pvt. Limited</a></span>
-		    					<ul style="color: #353935; font-size:14px;">
-		    					 <li>Designed and developed the end-to-end system architecture and APIs for the AmarDoctor digital health platform with a lean team. This platform has quickly gained traction since its 2025 launch, facilitating 2300+ consultations and registering 10k+ patients.</li>  
-		    						<li><strong>Clinical Decision Support System (CDSS)</strong> and <strong>Symptom Checker Module.</strong></li>
-		    						<li><strong>Knowledge Graph</strong> Database (TypeDB) to represent biomedical entities and their relationships such as patients’ diseases, symptoms (phenotypes), drugs and diagnostic tests.</li>
-		    						<li>Curating symptoms across multiple languages, exploring symptom variations, and examining relationships between symptoms.</li>
-		    					  <li>Quantitative evaluation of disease recommendation system using patient vignette cases to validate the accuracy of the symptom checker module.</li>
-		    					  <li>Implementation of full backend architecture of AmarDoctor APP, using Django <strong>REST Framework.</strong></li>
-		    						<li>Utilizing <strong>SQLite</strong> and <strong>PostgreSQL</strong> for managing credentials and client data</li>
-		    						<li>Deploying backend services on <strong>EC2 instances.</strong>, utilizing <strong>API gateway</strong>, <strong>load balancers</strong> and <strong>auto scaling groups.</strong></li>   
-		    						<li>Improved the AmarDoctor app's user experience through AI implementation, specifically by developing a system for personalized food recommendations and a GenAI-driven conversational API to better understand patient needs.</li>
-		    					</ul>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					<span class="date">2021-2022</span>
-		    					<h2 style="font-size:20px";>Assistant Porgrammer</h2>
-		    					<span class="position"><a href="https://www.jb.com.bd/">Janata Bank PLC.</a></span>
-		    					<p style="color: #353935; font-size:14px;">I secured a position in a <strong>government bank</strong> through a rigorous and <strong>highly competitive selection process</strong>. However, I found that the role lacked the technical challenges I seek in my career. Consequently, I made a bold decision to leave the position in pursuit of opportunities that allow me to continuously learn and apply my technical skills to real-world problems.</p>
-		    				</div>
-	    				</div>
-	    				
-					  <div id="page-3" class= "page three">
-					  		<h2 class="heading" style="color: #40534C; font-size:20px;">Teck Stack</h2>
-					  	<div class="row">
-					  			<div class="col-md-6 animate-box">
-					  		   <h4 style="font-size:17px;">Programming <span style="color: #3559E0; font-weight: bold;">Languages</span></h4>
-										<div class="progress-wrap ftco-animate">
-											<h3>
-												<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-													<li>Python</li>
-													<li>C/C++</li> 
-										      <li>Java</li>  
-										    	<li>Shell</li>
-										    	<li>Assembly</li>
-										    </h3>
-											</ul>
-											</div>
-									</div>
-									<div class="col-md-6 animate-box">
-                  <h4 style="font-size:17px;">Software<span style="color: #3559E0 ; font-weight: bold;"> Development</span></h4>							
-										<div class="progress-wrap ftco-animate">
-											<h3>
-												<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-													<li>SDLC, Django REST Framework</li>
-													<li>SQL, PostgreSQL, TypeQL</li> 
-													<li>Docker, CI/CD</li> 
-										      <li>Git Version Control</li>
-										      <li>Locust, Swagger</li> 
-										      <li>Gunicorn, Nginx</li>  
-										    </h3>
-											</ul>
-											</div>
-										</div>
-							</div>
-							<div class="row">
-                <div class="col-md-6 animate-box">
-									<h4 style="font-size:17px;">Data Science<span style="color: #3559E0; font-weight: bold;"> &  AI</span></h4>
-										<div class="progress-wrap ftco-animate">
-											<h3>
-												<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-													<li>Numpy, Pandas</li>
-													<li>Matplotlib, Seaborn</li>
-													<li>Scikit-Learn</li>
-													<li>Transformers, Diffusers</li> 
-													<li>Keras, Tensorflow</li>
-													<li>Rasa</li>
-										      <li>LLM, RAG, GenAI</li>
-										    </h3>
-											</ul>
-											</div>
-										</div>
-
-								 <div class="col-md-6 animate-box">
-			           <h4 style="font-size:17px;">A<span style="color: #3559E0; font-weight: bold;">WS</span></h4>
-									<div class="progress-wrap ftco-animate">
-										<h3>
-											<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-												<li>EC2 Instances</li>
-												<li>API Gateway</li> 
-												<li>Route53, DNS</li> 
-									      <li>S3 Bucket, Elsastic IPs</li>
-									      <li>AMI, SES</li>
-									      <li>Launch Templates, VPC</li>  
-									      <li>Load Balancer, Auto Scaling Group</li> 
-									  </h3>
-										  </ul>
-									</div>
-								</div>
-							</div>
-								
-								<div class="row">
-										<div class="col-md-6 animate-box">
-									<h4 style="font-size:17px;">Embedded <span style = "color: #3559E0; font-weight: bold;">Systems</span></h4>
-										<div class="progress-wrap ftco-animate">
-											<h3>
-												<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-													<li>Arduino, Atmega32</li> 
-													<li>RFID, Sonar Sensors</li>
-													<li>RaspberryPi 3</li>
-										    </h3>
-											</ul>
-									 </div>
-									</div>
-
-									<div class="col-md-6 animate-box">
-									<h4 style="font-size:17px;">To<span style = "color: #3559E0; font-weight: bold;">ols</span> & OS</h4>
-										<div class="progress-wrap ftco-animate">
-											<h3>
-												<ul style="color: #787878;  font-weight: bold; font-size:15px;">
-													<li>Jira, Confluence</li> 
-													<li>Beautifulsoup, Sphinx</li>
-													<li>Linux, Windows</li>
-										    </h3>
-											</ul>
-									 </div>
-									</div>
-								</div>
-              <hr>
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Professional Experience</h2>
                 
-					    <div id="page-6" class= "page six">
-					    <h2 class="heading" style="color: #40534C; font-size:20px;">Projects</h2>
-					    <h3 style="color: #40534C; font-size:18px;">Industrial Projects</h3>
+                <div class="card">
+                    <h3 style="color:#00809D;">R&D Software Engineer | MedAi Health</h3>
+                    <p class="card-meta">Present</p>
+                    <ul>
+                        <li>Designed and developed <a href="https://www.amardoctor.health/" style="color: #00809D; text-decoration: none;"><strong>AmarDoctor</strong></a>, the first AI-powered digital health platform designed for Bengali speakers</li>
+                        <li>Developed the architecture for scalable symptom assessment and decision support systems serving thousands of users.</li>
+                        <li>Manage technical team and drive API design and cloud infrastructure development</li>
+                        <li>Focus on accessibility and inclusivity in healthcare technology</li>
+                    </ul>
+                </div>
 
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div>
-		    					<!--<span class="date">2021-2022</span>-->
-		    					<h3 style="font-size: 16px; font-weight: bold;">Multilingual Symptom Checker & Clinical Decision Support System</h3>
-		    					<!--<span class="position">MedAi Ltd. UK</span> -->
-		    					<p style="font-size: 15px; color: black;">This symptom checker module serves as an intelligent tool that facilitates the symptom selection process by suggesting relevant symptoms based on the input provided by the patient. <br>
-		    					Once the patient has completed entering their symptoms, the module prompts additional questions tailored to the patient's responses (yes, no, or don't know). Subsequently, it presents provisional diagnoses along with pertinent specialization recommendations, guiding the patient towards the appropriate healthcare professional.</p>
-		    					<br>
-		    					<p>
-		    						<video autoplay loop muted controls src="images/Voice Interactive.mp4" width="750" height="415"></video>
+                <div class="card">
+                    <h3 style="color:#00809D;">Teaching | Bangladesh Institute of Science & Technology</h3>
+                    <p class="card-meta">2029-20</p>
+                    <ul>
+                        <li>Taught and mentored undergraduate students in <strong>Microprocessor and Assembly Languages and Computer Graphics Lab</strong>, focusing on hands-on instruction and foundational computing concepts.</li>
+                        <li>Conducted lab sessions for <strong>Microprocessor & Assembly Languages</strong> and <strong>Network and Information Security</strong>, guiding students through practical implementation of low-level programming and secure communication protocols.</li>
+                        <li>Facilitated interactive, application-driven labs in Computer Graphics and Security, supporting students in applying theoretical knowledge to real-world technical challenges.</li>
+                    </ul>
+                </div>
+                
+                <!--<div class="card" style="background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); border-left-color: #00809D;">
+                    <h4>Career Focus</h4>
+                    <p style="color: #234e52;">After gaining valuable experience in the financial sector through a competitive government position, I chose to pursue my passion for technology and healthcare innovation, seeking opportunities that combine technical challenges with meaningful social impact.</p>
+                </div>-->
+            </section>
 
-		    						</p>
-		    					<!--
-		    					<img src="images/ss_dq.png" style="width: 700px; height: 640px;">
-                                <figcaption style="margin-left:90px; color: #3b51f7; font-weight: bold;"><small>Fig: Flow of Symptom Checker and Disease Prognosis Tool</small></figcaption>-->
-	    					</div>
-	    				</div>
+             <section id="research" class="section">
+                <h2 class="section-title">Research & Publications</h2>
+                
+                <!-- Current Research -->
+                <div class="card">
+                    <h3>Current Research Focus</h3>
+                    <p><strong>Human-Centered AI in Healthcare:</strong> My current work centers on developing culturally-aware, linguistically inclusive AI systems for underserved communities, with a particular focus on Bengali-speaking populations. I'm also exploring how generative AI can support mental health therapy—especially through emotionally personalized therapeutic visualizations for trauma-informed care and individuals experiencing emotional regulation challenges.</p>
 
-	    				<div class="resume-wrap d-flex ftco-animate">
-					    	<div>
-		    					<!--<span class="date">2021-2022</span>-->
-		    					<h3 style="font-size: 16px; font-weight: bold;">Smart Food Guidance: Personalized via Image Recognition and Medical Records</h3>
-		    					<!--<span class="position">MedAi Ltd. UK</span> -->
-		    					<p style="font-size: 15px; color: black;">A system provides a user interface for generating personalized food intake recommendations informed by an individual's medical history. The interface features image recognition powered by computer vision, allowing users to upload or select food images. The system identifies potential matches (up to 10) for user confirmation before delivering specific advice on increasing, reducing, or avoiding the food based on their past diagnoses.</p>
-		    					<br>
-		    					<p>
-		    						<video autoplay loop muted controls src="images/Food.mp4" width="750" height="415"></video>
+                    <p>You can find my concept paper on this topic in the following section. If this research interests you, please send me an email.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Mental Health</span>
+                        <span class="tech-item">Generative AI</span>
+                        <span class="tech-item">Multimodal Large Language Models</span>
+                        <span class="tech-item">Accessibility</span>
+                    </div>
+                </div>
 
-		    						</p>
-		    					<!--
-		    					<img src="images/ss_dq.png" style="width: 700px; height: 640px;">
-                                <figcaption style="margin-left:90px; color: #3b51f7; font-weight: bold;"><small>Fig: Flow of Symptom Checker and Disease Prognosis Tool</small></figcaption>-->
-	    					</div>
-	    				</div>
-	    				
-	    				
-	    				<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					<h2 style="font-size: 16px; font-weight: bold;">Medical Assistant Chatbot</h2>
-		    					<p style="font-size: 15px; color: black;">The medical assistant chatbot discerns the user's mood and offers general illness options if the mood is suboptimal. It then tailors additional questions based on the identified intent of the chosen option and ultimately suggests whether the user should consult a physical health specialist or a mental health specialist. <a href="https://github.com/OceanRahan/medical-assistant-chatbot">[GitHub]</a></p>
-		    					<br>
-		    					<img src="images/Medical Assistant Bot.png" style="width: 750px; height: 370px;">
-		    					<br>
-                                <!--<figcaption style="margin-left:20px; color: #3b51f7; font-weight: bold;"><small>Fig: Medical Assistant Chatbot Flow-Diagram</small></figcaption>-->
-		    					<br>
-		    				</div>
-	    				</div>
-	    			    <!--
-	    				<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Stable Diffusion Model Fine Tuning</h2>
-		    					
-		    					<p>To enhance user experience and provide more visually appealing symptom icons, I fine-tuned a Stable Diffusion model to generate custom vector arts for image data. This process involved preparing images, generating preliminary captions with image-to-text model, curating the captions, and training a Lora model.</p>
-		    					<br>
-		    					<img src="images/stable-diffusion1.png" style="width: 400px; height: 350px;">
-		    					<br>
-                                <figcaption style="margin-left:20px; color: #3b51f7; font-weight: bold;"><small>Fig: Stable-diffusion model fine-tuning steps</small></figcaption>
-		    					<br>
-		    				</div>
-	    				</div> 
-	    			
+                <!-- Publications -->
+                <div class="card">
+                    <h3>Preprints / Manuscript</h3>
+                    
+                    <!-- Thesis -->
 
-	    				<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="text pl-3">
-		    				
-		    					<h2>Symptom Normalization</h2>
-		    				
-		    					<p>While there are variations of the same symptoms in both Bengali and English, it's impractical to encompass all potential variations. Therefore, this module aligns user-provided symptoms with our existing database. 
-		    					<br>
-		    					<br>
-		    					We employ a BERT model for sentence embeddings, specifically leveraging Bio-BERT for superior performance with medical data. To ensure accuracy, we utilize a combination of sentence similarity scores and organ matching. This prevents symptoms specified for one organ from being erroneously matched to another organ solely based on similarities in sentence structure.</p>
-		    					<br>
-		    					<img src="images/img4.png" style="width: 650px; height: 200px;">
-		    					<br>
-		    					<figcaption style="margin-left:30px; color: #3b51f7; font-weight: bold;"><small>Fig: Symptom Normalization Flow-Diagram</small></figcaption>
-		    					<br>
-		    				</div>
-	    				</div>
-	    				-->
-	    				<div class="resume-wrap d-flex ftco-animate">				    
-					    	<div class="text pl-3">
-		    					<!--<span class="date">2022-2023</span>-->
-		    					<h2 style="font-size: 16px; font-weight: bold;">Client Management System</h2>
-		    					<!--<span class="position">Cambridge University</span>-->
-		    					<p style="font-size: 15px; color:black;">Design and developed an API-based SaaS client management system that authorizes client access to our APIs. The system uses JWT authentication and allows clients to purchase services for flexible durations based on pre-defined packages.</p>
-		    					<br>
-		    					<img src="images/Client_Management.png" style="width: 700px; height: 400px;">
-		    					<!--<br>
-		    					<figcaption style="margin-left:30px; color: #3b51f7; font-weight: bold;"><small>Fig: Client Management System</small></figcaption>-->
-		    					
-		    				</div>
-	    				</div>
+                     <div class="publication-item">
+                        <h4>1. Automatic Speech Recognition of Biomedical Data in Bengali Language</h4>
+                        <p class="publication-description">Shariar Kabir; Nazmun Nahar; Mamunur Rashid; Shyamasree Saha (2024). Automatic Speech Recognition for Biomedical Data in Bengali Language. <strong>arXiv preprint arXiv:2406.12931.</strong>  <a href="https://arxiv.org/abs/2406.12931"><i class="fas fa-file-pdf"></i> PDF</a></p>  
+                       
+                    </div>
+                       <div class="publication-item" style="font-style: italic; opacity: 0.8;">
+                        <h4>2. First Multilingual Digital Platform For AI-Driven Primary Care Triage And Patient Management System For Bengali Speakers. </h4>
+                        <p class="publication-description">Nazmun Nahar; Shariar Kabir; Sumaiya Tasnia Khan; Suparna Das; Shyamasree Saha; Mamunur Rashid. <a href="https://drive.google.com/file/d/10U_euLjn2Y10kf8FFXK4vgRbZFTjor1t/view"><i class="fas fa-file-pdf"></i> PDF</a></p>
+                       
+                    <div class="publication-item" style="font-style: italic; opacity: 0.8;">
+                        <h4>3. Through the Mirror of Memory, Healing in Motion: A Generative AI Framework for Trauma-Informed Therapeutic Visualization.</h4>
+                        <p class="publication-description">This paper proposes a generative AI framework for trauma-informed therapy, focusing on personalized video synthesis to support inner child healing. By combining therapist-guided prompts with emotion-aware generation, the system aims to create emotionally resonant content that complements therapeutic work—especially for individuals with emotional numbing or limited imaginative capacity. <a href="https://drive.google.com/file/d/1uoibBvyhv_5l98Ssu3_IaGNL6Oh0XZ37/view?usp=drive_link"><i class="fas fa-file-pdf"></i> PDF</a></p>
+                       
+                    </div>
 
-               <h3 style="color: #40534C; font-size:20px;">Academic Projects</h3>
-               <div class="resume-wrap d-flex ftco-animate">				    
-					    	<div class="text pl-3">
-		    				<h2 style="font-size: 16px; font-weight: bold;">RFID Based Mobile Charging System (2017)</h2>
-		    				 <p style="font-size: 15px; color:black;">The system allows phone charging upon successful RFID identity validation. Presenting a programmed, valid white tag to the reader grants power access. An invalid tag or repeated switch toggling without validation will not enable charging.</p> <br> 
-		    				 <p><iframe width="750" height="415"src="https://youtube.com/embed/3bjlru9CC1U?si=XexMlYs0CZU9BHG8"></iframe></p>
-		    					<!--<br>
-		    					<figcaption style="margin-left:30px; color: #3b51f7; font-weight: bold;"><small>Fig: Client Management System</small></figcaption>-->
-		    					
-		    				</div>
-	    				</div>
+                    <!-- Template for future publications -->
+                 
+                </div>
 
-	    				 <div class="resume-wrap d-flex ftco-animate">				    
-					    	<div class="text pl-3">
-		    				<h2 style="font-size: 16px; font-weight: bold;">Tic Tac Toe Game (2016)</h2>
-		    				 <p style="font-size: 15px; color:black;">This is an implementation of the classic Tic Tac Toe game using the Assembly programming language, specifically targeting the ASM 8086 microprocessor for both the game logic and its user interface. <a href="https://github.com/OceanRahan/Tic-Tac-Toe">[GitHub]</a></p>
-		    					<!--<br>
-		    					<figcaption style="margin-left:30px; color: #3b51f7; font-weight: bold;"><small>Fig: Client Management System</small></figcaption>-->
-		    					
-		    				</div>
-	    				</div>
+                <!-- Research Interests 
+                <div class="card">
+                    <h3><i class="fas fa-lightbulb" style="color: #4299e1; margin-right: 0.5rem;"></i>Research Interests</h3>
+                    <div class="research-grid">
+                        <div class="research-area">
+                            <h4><i class="fas fa-heart-pulse" style="color: #e53e3e; margin-right: 0.5rem;"></i>Digital Health</h4>
+                            <p>AI-powered healthcare solutions, telemedicine platforms, and health accessibility technologies</p>
+                        </div>
+                        <div class="research-area">
+                            <h4><i class="fas fa-users" style="color: #38b2ac; margin-right: 0.5rem;"></i>Social Computing</h4>
+                            <p>Human-computer interaction, social AI systems, and community-centered technology design</p>
+                        </div>
+                        <div class="research-area">
+                            <h4><i class="fas fa-brain" style="color: #9f7aea; margin-right: 0.5rem;"></i>AI/ML in Healthcare</h4>
+                            <p>Machine learning applications in medical diagnosis, clinical decision support, and health informatics</p>
+                        </div>
+                        <div class="research-area">
+                            <h4><i class="fas fa-universal-access" style="color: #d69e2e; margin-right: 0.5rem;"></i>Accessibility</h4>
+                            <p>Inclusive technology design, multilingual AI systems, and assistive technologies</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </section>
 
-	    			  <!--
-	    				<div class="resume-wrap d-flex ftco-animate">					    
-					    	<div class="text pl-3">
-		    					<span class="date">2021-Present</span>
-		    					<h2>Clinical NER for Bengali (In progress)</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>Due to the limited availability of conversational medical data in Bengali, our goal is to gather medical data, annotate it, and fine-tune a Large Language Model (LLM) for Named Entity Recognition (NER) of entities in the medical domain.
-		    					<br>
-		    				    This project is currently in progress, with the objective of extracting medical data from conversations between doctors and patients. The data includes vital signs such as blood pressure, pulse rate, and temperature, as well as existing diseases, current symptoms, and diagnostic test information.
-		    					</p>
-		    				</div>
-	    				</div> -->
-					  </div>
-					</div>
-					
-					</div>
-			  </div>
-    	</div>
-    </section>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Key Projects</h2>
+                
+                <div class="card">
+                    <h3 style="color:#00809D;">AmarDoctor - AI Health Platform</h3>
+                    <p><strong>Problem:</strong> Lack of AI-driven primary care access for Bengali speakers, creating healthcare accessibility barriers for South Asian populations.</p>
+                    <p><strong>Solution:</strong> Designed comprehensive medical knowledge graph comprising symptoms, diseases, and weighted relationships; developed clinical decision support algorithms for multilingual symptom assessment and diagnostic recommendations.</p>
+                    <p><strong>Impact:</strong> A first-of-its-kind AI-powered platform that has served over 10,000 Bengali-speaking users globally, delivering more than 2,300 personalized healthcare consultations as of now.</p>
+                    <p><strong>Award: </strong>AmarDoctor was selected as a Solver Team in the 2024 <a href="https://solve.mit.edu/solutions/86473">MIT Solve Global Health Equity Challenge</a> for its AI-powered, culturally inclusive telemedicine platform serving Bengali-speaking communities. The award recognizes its impact in advancing equitable access to primary care.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">AI</span>
+                        <span class="tech-item">NLP</span>
+                        <span class="tech-item">Clinical Decision Support</span>
+                        <span class="tech-item">Healthcare APIs</span>
+                    </div>
+                     <div class="project-links">
+                        <a href="https://amardoctor.health"><i class="fas fa-globe"></i> Website</a>
+                         <a href="https://play.google.com/store/apps/details?id=com.medai.amardaktar&pcampaignid=web_share&pli=1"><i class="fab fa-google-play"></i> APP</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color:#00809D;">Symptom Checker and Clinical Descision Support System</h3>
+                    <p><strong>Problem:</strong> Many patients face difficulty articulating their symptoms and identifying the right specialist.</p>
+                    <p><strong>Solution:</strong> Designed an AI-powered symptom checker that suggests relevant symptoms, asks targeted follow-up questions, and provides provisional diagnoses along with specialist recommendations.</p>
+                    <p><strong>Impact:</strong> SAchieved <strong>87%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
+                    <p><img src = "images/symptom_checker.png" style="width: 870px; height:400px; "></p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Data Science</span>
+                        <span class="tech-item">Medical Knowledge Graphs</span>
+                        <span class="tech-item">Algorithm</span>
+                    </div>
+                      <div class="project-links">
+                        <a href="https://drive.google.com/file/d/1yX4-jM6TSIc8Oj2QOsO7iLKvHl-1_jGh/view?usp=drive_link"><i class="fas fa-video"></i> Demo</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color:#00809D;">Personalized Food Recommendation System for Disease-Based Dietary Guidance.</h3>
+                    <p><strong>Problem:</strong> Gap between visual food recognition technology and personalized medical dietary counseling for chronic disease management.</p>
+                    <p><strong>Solution:</strong>  Integrated computer vision-based food classification with medical knowledge systems for condition-specific dietary filtering and recommendation generation.</p>
+                    <p><strong>Impact:</strong> Enables real-time e dietary guidance automation, potentially improving patient adherence to medical dietary restrictions.</p>
+                    <p><img src = "images/food.png" style="width: 870px; height:400px; "></p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Computer Vision</span>
+                        <span class="tech-item">Image Recognition</span>
+                        <span class="tech-item">Medical Database Integration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/file/d/11yJc_9NbuYIQ3jWbYzfN_tKYec8VJWw_/view?usp=drive_link"><i class="fas fa-video"></i> Demo</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color:#00809D;">Medical Assistant Chatbot Using Rasa</h3>
+                    <p><strong>Problem:</strong> Limited accessibility to preliminary health assessment tools through natural conversational interfaces, particularly for mental vs. physical health triage.</p>
+                    <p><strong>Solution:</strong> Developed intent-based conversational AI using RASA framework with dynamic dialogue management, implementing looped questioning system for symptom classification.</p>
+                    <p><strong>Impact: </strong>Demonstrated feasibility of automated health triage through conversational interfaces, enabling preliminary classification between mental and physical health concerns.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">NLP</span>
+                        <span class="tech-item">Conversational AI</span>
+                        <span class="tech-item">RASA</span>
+                        <span class="tech-item">Medical Decision Trees</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/OceanRahan/medical-assistant-chatbot"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
 
-    </section>
+                 <div class="card">
+                    <h3 style="color:#00809D;">Bengali Text Recognition Using Deep Learning</h3>
+                    <p><strong>Problem:</strong> Lack of effective optical character recognition systems for Bengali printed text, hindering digitization of Bengali literature and documents.</p>
+                    <p><strong>Solution:</strong> Developed novel Bengali word image dataset from printed documents, designed and trained deep neural network architectures for character sequence recognition.</p>
+                    <p><strong>Impact: </strong>Achieved 87.3% word recognition accuracy, contributing to low-resource language NLP research and digital preservation of Bengali texts. </p>
 
-<section class="ftco-section ftco-no-pb goto-here" id="self-learning">
+                    <div class="tech-stack">
+                        <span class="tech-item">Tensorflow</span>
+                        <span class="tech-item">Keras</span>
+                        <span class="tech-item">OpenCV</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.kaggle.com/datasets/oceanrahan/final-train"><i class="fa-solid fa-database"></i> Dataset</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color:#00809D;">SaaS Client Management System</h3>
+                    <p><strong>Problem:</strong> Managing scalable, secure API access for healthcare service providers.</p>
+                    <p><strong>Solution:</strong> Built a JWT-authenticated client management platform with customizable service packages and time-based access control.</p>
+                    <p><strong>Impact:</strong> Powers scalable B2B healthcare API delivery with robust access and subscription management.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Django REST API</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">JWT Authentication</span>
+                        <span class="tech-item">SaaS Architecture</span>
+                    </div>
+                </div>
+            </section>
 
-<div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <nav id="navi">
-              <ul>
-                <li><a href="#page-8">Courses</a></li>
-                <!--<li><a href="#page-9">Books</a></li>-->
-                <li><a href="#page-10">Practice Projects</a></li>
-              </ul>
-            </nav>
-          </div>
-            <div class="col-md-9">
-            <div id="page-8" class="page four">
-              <h2 class="heading" style="color: #40534C; font-size:20px;">Courses</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-              	<ul>
-              		<li><a href="https://learn.deeplearning.ai/accomplishments/5fbd0473-8f63-4df0-a0c1-edac90914e0b">Fine tuning large language models</a>, DeepLearningAI</li>
-              	</ul>
-              
-            </div>
-          </div>
-<!--
-  <div id="page-9" class="page four">
-              <h2 class="heading" style="color: #40534C">Books</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-		            <p style="color: #353935;">Coming Soon</p>
-	        
-        </div>
--->
-        <div id="page-10" class="page four">
-              <h2 class="heading" style="color: #40534C; font-size:20px;">Practice Projects</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-              	<div class="text pl-3">
-         
-              		    <li><a href="https://www.kaggle.com/code/oceanrahan/ulta-skincare-reviews-analysis">Descriptive and inferential statistics, exploratory data analysis(EDA)</a></li>
-              	        
-        </div>
-    	
-  </div>
-      
-  </div>
+            <!-- Education Section 
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="card">
+                    <h3>Bachelor's Degree in Computer Science</h3>
+                    <p><strong>Thesis:</strong> Bengali Text Recognition Using Deep Learning</p>
+                    <p><strong>Supervisor:</strong> Professor Dr. Md. Monirul Islam</p>
+                    <p><strong>Research:</strong> Created word image dataset from printed Bengali documents, implemented and compared multiple deep learning approaches (CNN, RNN, LSTM) for text recognition</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link">pdf</a>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: #f7fafc; border-radius: 8px; border-left: 4px solid #00809D;">
+                        <h4 style="color: #2d3748; margin-bottom: 0.5rem;">Relevant Coursework</h4>
+                        <p style="color: #4a5568;">Structured programming language, Object oriented programming language, Data Structures, Algorithms, Database, Computer architecture, Software engineering and information system design, Software development, Basic graph theory, VLSI Design, Theory of computation and others.</p>
+                    </div>
+                </div>
+            </section>-->
 
-</div>
-</div>
-</section>
-
-
-
-    <!--
-    <section class="ftco-section" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Blog</h1>
-            <h2 class="mb-4">Other Interests</h2>
-             <ul style="color: #000000">
-             	<li>In addition to my professional endeavors, I also enjoy writing educational blogs on platforms such as Medium.</li>
-              <li>
-             I'm a cat lover with two feline companions. One is a rescue, while the other was born in my old apartment building.
-
-        </li>
-    </ul>
-            
-          </div>
-        </div>
-        
-        </div>
-      </div>
-  -->
-<section class="ftco-section ftco-partner" id='contact-section'>
-	<div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Get In Touch</h2>
-            
-          </div>
-        </div>
-    	<div class="container">
-    		<div class="row">
-
-          
-          <!--<div class="col-sm ftco-animate">
-    				<a href="https://www.linkedin.com/in/nazmun-nahar-81670b149" class="partner"><img src="images/linkedin.png" style="height:35px; width: 35px; border-radius: 35%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>-->
-
-    			<!--<div class="col-sm ftco-animate">
-    				<a href="https://scholar.google.com/citations?hl=en&user=oxADXwQAAAAJ" class="partner"><img src="images/scholar.png" style="height:35px; width:35px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>-->
-
-    			<!--	<div class="col-sm ftco-animate">
-    				<a href="oceanrahan@gmail.com" class="partner"><img src="images/gmail.png" style="height:35px; width:35px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-    			-->
-
-    			<div class="col-sm ftco-animate">
-    				<a href="https://github.com/oceanrahan" class="partner"><img src="images/github-sign.png" style="height: 45px; width:50px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-
-    			<div class="col-sm ftco-animate">
-    				<a href="https://huggingface.co/oceanrahan" class="partner"><img src="images/hugging-face.png" style="height: 45px; width:50px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-    			    			
-         <!---
-    			  <div class="col-sm ftco-animate">
-    				<a href="https://orcid.org/0009-0003-3708-9029" class="partner"><img src="images/orcid.png" style="height: 30px; width:30px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-    			-->
-    			
-
-    			<div class="col-sm ftco-animate">
-    				<a href="https://medium.com/@oceanrahan" class="partner"><img src="images/medium.png" style="height:45px; width:50px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-
-    			<div class="col-sm ftco-animate">
-    				<a href="https://www.kaggle.com/oceanrahan" class="partner"><img src="images/kaggle.png" style="height:45px; width:50px; border-radius: 15%; margin-left: 50px;" alt="Colorlib Template"></a>
-    			</div>
-
-    			
-    		</div>
-    	</div>
-    </div>
-    </section>
-
-<!---
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Github</h3>
-		            <p>Dhaka, Bangladesh</p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Contact Number</h3>
-		            <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
-	            </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Email Address</h3>
-		            <p><a href="mailto:oceanrahan@gmail.com">info@yoursite.com</a></p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">LinkedIn</h3>
-		            <p><a href="#">yoursite.com</a></p>
-	            </div>
-	          </div>
-          </div>
-        </div>
-
-       
-      </div>
-    </section>
-		-->
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-        
-          <!--
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>Hailing from Bangladesh, a developing nation, pursuing computer science as a female student poses considerable hurdles. The realms of software development, data science and machine learning are largely dominated by males, often prompting women to gravitate towards more conventional and perceived "safer" career paths. Additionally, coming from a financially disadvantaged background, funding a Ph.D., particularly in countries like the UK where currency disparities are significant, is an insurmountable challenge. Throughout my academic journey, I have exclusively attended government institutions. Moreover, I have encountered numerous instances of gender discrimination while growing up, which significantly impacted my confidence. I firmly believe that the challenges I have faced in my life have not only made me stronger but also uniquely prepared me to pursue my PhD. or any other significant job position with even greater determination and resilience.</p>
-            </div>
-         </div>
-     -->
-          
-          
-
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-grid">
+                     <div>
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/OceanRahan" style="color:blue;"><strong>GitHub</strong></a>
+                    </div>
+                    <div>
+                        <i class="fab fa-kaggle"></i>
+                        <a href="https://www.kaggle.com/oceanrahan" style="color:blue;"><strong>Kaggle</strong></a>
+                    </div>
+                     <div>
+                        <i class="fas fa-microchip"></i>
+                        <a href="https://huggingface.co/oceanrahan"><strong>Huggingface</strong></a>
+                    </div>
+                    <div>
+                        <i class="fab fa-medium"></i>
+                        <a href="https://medium.com/@oceanrahan"><strong>Medium</strong></a>
+                    </div>
+                   
+                   
+                </div>
+            </section>
+        </main>
          <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=KXkixfxWFTff9OPJwmnObEKPc0ffrs2k2uY3tM1UViE&cl=ffffff&w=a"></script>
-    </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
-  
-  </body>
+    </div>
+</body>
 </html>
