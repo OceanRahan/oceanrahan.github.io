@@ -288,9 +288,10 @@
         .contact-grid-small {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 10px));
-            gap: 0rem;
-            margin-left: 260px;
+            gap: 1rem;
+            margin-left: 0px;
             margin-top: 1rem;
+            position: relative;
         }
 
         .contact-item {
