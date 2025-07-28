@@ -282,7 +282,8 @@
             grid-template-columns: repeat(auto-fit, minmax(160px, 23px));
             gap: 1rem;
             margin-top: 2rem;
-            margin-left: 130px;
+            margin-left: 120px;
+            font-size:20px;
         }
         .contact-grid-small {
             display: grid;
@@ -303,11 +304,11 @@
 
         .contact-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 20px #03A6A1;
         }
 
         .contact-item i {
-            font-size: 2rem;
+            font-size: 4rem;
             color: black;
             margin-bottom: 1rem;
         }
