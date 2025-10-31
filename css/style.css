@@ -6,7 +6,8 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'EB Garamond', Garamond, serif;
+            font-size: 14pt;
             line-height: 1.7;
             color: #2d3748;
             background-color: #DDDAD0;
