@@ -1,0 +1,255 @@
+/* RESET */
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'EB Garamond', Garamond, serif;
+  background: #ffffff;
+  color: #57564F;
+  line-height: 1.7;
+}
+
+/* HEADER */
+.site-header {
+  background: #57564F;
+  /*background: linear-gradient(135deg, #0f172a, #1e293b);*/
+  color: #ffffff;
+  padding: 2.5rem 1.5rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.site-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+   margin-top: 0.1rem;
+  opacity: 0.9;
+}
+
+/* MAIN LAYOUT */
+.case-study {
+  max-width: 1150px;
+  margin: auto;
+  padding: 4rem 1.5rem;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 5rem;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section h3 {
+  font-size: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.section p
+{
+  color: black;
+  font-size:14pt;
+}
+.section li {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+
+
+
+/* SPLIT LAYOUT */
+.split {
+  display: inline-flex;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split.reverse {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+/* INTERACTIVE CARD */
+.split.interactive {
+  padding: 2.8rem;
+  border-radius: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.split.interactive.v1
+{
+  background: linear-gradient(180deg, #f8fafc, #e2ff82);
+}
+.split.interactive.v2 {
+  background: linear-gradient(180deg, #f8fafc, #a7fab0);
+}
+.split.interactive.v3 {
+  background: linear-gradient(180deg, #f8fafc, #8fe1f7);
+}
+.split.interactive.v4 {
+    background: linear-gradient(180deg, #f8fafc, #cafcee);
+}
+.split.interactive.v5 {
+  background: linear-gradient(180deg, #f8fafc, #7aa7fa);
+}
+.split.interactive.v6 {
+
+  background: linear-gradient(180deg, #f8fafc, #a1f7be);
+}
+.split.interactive.v7 {
+  background: linear-gradient(180deg, #f8fafc, #fcb3b7);
+}
+
+.split.interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+}
+
+/* TEXT */
+.text-block h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #22c55e);
+  margin-top: 0.6rem;
+  border-radius: 2px;
+}
+
+.text-block ul {
+  margin-top: 0rem;
+  color: black;
+  font-size: 16pt;
+  color: black;
+}
+
+.text-block li {
+  background: white;
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease;
+  color: black;
+  font-size: 14pt;
+ 
+}
+
+.text-block ul li:hover {
+  transform: translateX(6px);
+}
+
+/* IMAGES */
+.image-block {
+  position: relative;
+}
+
+.image-block img {
+  width: 95%;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.split:hover .image-block img {
+  transform: scale(1.015);
+}
+
+.image-block figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* REFLECTION */
+.reflection {
+  padding: 3.5rem;
+  border-radius: 22px;
+  background: radial-gradient(circle at top left, #eef2ff, #ecdeff);
+  border-left: 6px solid #2563eb;
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .split,
+  .split.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .site-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* VIDEO BLOCK */
+.media-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-block video {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s ease;
+}
+
+.split:hover .media-block video {
+  transform: scale(1.01);
+}
+
+.caption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+ .nav a {
+    color: white;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;   
+    border-radius: 2px;
+    font-size: 16pt;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+</style>
