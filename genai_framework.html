@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Mental Health | Conceptual Framework</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --dark: #18230F;
+            --accent: #1F7D53;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .site-footer {
+          text-align: center;
+          padding: 2.5rem;
+          font-size: 0.9rem;
+          color: #6b7280;
+        }
+
+    /* Meta-Data Section */
+    .meta-section {
+        background: #ffffff;
+        padding: 4rem 2rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .meta-container {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .meta-label {
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: var(--accent); /* Using your blue accent color */
+    }
+
+    .meta-value {
+        font-size: 1.1rem;
+        color: var(--dark);
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+@media (max-width: 768px) {
+    .meta-section { padding: 3rem 1.5rem; }
+    .meta-container { grid-template-columns: 1fr 1fr; }
+}
+
+        /* Nav */
+        .glass-nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1100px; z-index: 1000;
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px);
+            border-radius: 50px; border: 1px solid rgba(0,0,0,0.05);
+        }
+        .glass-nav a { text-decoration: none; color: var(--dark); font-weight: 600; }
+
+        /* Hero */
+        .hero {
+          height: 80vh; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          text-align: center; 
+          /* Replace 'your-image-path.jpg' with your actual image file */
+          background: linear-gradient(
+                    135deg, 
+                    rgba(0, 0, 0, 0.65), 
+                    rgba(0, 0, 0, 0.55)
+                ), 
+                      url('images/p8.jpg') no-repeat center center;
+          background-size: cover;
+          color: #ffffff; /* Ensures text is visible over the image */
+          padding: 0 20px;
+      }
+
+      .hero h1 { 
+          font-size: clamp(3rem, 8vw, 5rem); 
+          font-weight: 800; 
+          margin: 0; 
+          letter-spacing: -2px; 
+          color: #ffffff; 
+          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      }
+
+      .hero p.hero-subtitle {
+        font-size: 1.5rem; 
+        max-width: 800px;
+        margin-top: 1.5rem;
+        /* Explicitly setting color to white with high opacity */
+        color: rgba(255, 255, 255, 0.95) !important; 
+        text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+      }
+
+        /* Problem Section (The Friction) */
+        .story-section { padding: 8rem 2rem; }
+        .dark-theme { background: var(--dark); color: #f8fafc; }
+        .container { max-width: 1100px; margin: auto; }
+        .large-text { font-size: 1.5rem; line-height: 1.4; margin-bottom: 2rem; }
+        
+        .challenge-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem; margin-top: 4rem;
+        }
+        .challenge-item { padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.03); }
+
+        /* Design Strategy */
+        .strategy-content { display: flex; gap: 4rem; align-items: center; margin-top: 3rem; }
+        .strategy-text { flex: 1; font-size: 1.3rem; }
+        .strategy-img { flex: 1; }
+        .strategy-img img { width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* IMPROVED STICKY SCROLLING */
+        .module-reveal {
+            display: flex; position: relative;
+            background: #f8fafc;
+        }
+        .visual-side {
+            flex: 1; position: sticky; top: 0;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+        }
+        .video-wrapper {
+            width: 100%; max-width: 900px; aspect-ratio: 7/4;
+            margin-left: 50px;
+            background: #000; border-radius: 10px; overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        .video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Workflow Styling */
+.workflow-bg {
+    background: #ffffff;
+    position: relative;
+}
+
+.workflow-grid {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Vertical Line connecting points */
+.workflow-grid::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #f1f5f9;
+    z-index: 1;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 3rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    background: var(--accent);
+    color: white;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 0.9rem;
+    box-shadow: 0 0 0 10px #fff; /* Masks the line behind it */
+}
+
+.step-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+.step-content p {
+    margin: 0;
+    max-width: 600px;
+    font-size: 1.15rem;
+    color: #64748b;
+}
+
+/* Animation refinement: Line fill effect */
+[data-aos="fade-right"].aos-animate .step-number {
+    animation: pulse-accent 2s infinite;
+}
+
+@keyframes pulse-accent {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+/* Research & Insights Styling */
+.insights-bg {
+    background: #f8fafc;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.finding-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.finding-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+.finding-list li strong {
+    color: var(--dark);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Implication Highlight Box */
+.highlight-box {
+    background: var(--dark);
+    padding: 3rem;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.implication-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: flex-start;
+}
+
+.implication-item i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+.implication-item strong {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.implication-item p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+
+/* Why It Matters Styling */
+.why-it-matters {
+    background: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 3rem 0;
+}
+
+.why-card {
+    padding: 1rem 0;
+}
+
+.why-card p {
+    font-size: 1.15rem;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* Accent for the bottom row to show progress */
+.impact-accent {
+    border-top: 2px solid var(--accent);
+    padding-top: 2rem;
+}
+
+/* Image Placeholder Styling */
+.why-visual {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.why-visual img {
+    width: 80%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.why-visual .caption {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Reflection Section Styling */
+.reflection-bg {
+    background: #ffffff;
+    padding-bottom: 10rem;
+}
+
+.reflection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.reflection-block {
+    padding: 2rem;
+    background: #fcfcfd;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.reflection-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    background: #ffffff;
+}
+
+.reflection-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reflection-header i {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.reflection-block h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    color: var(--dark);
+}
+
+.reflection-block p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.insight-mini-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.insight-mini-list li {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.insight-mini-list li i {
+    font-size: 0.8rem;
+    color: #22c55e;
+}
+
+.note {
+    font-size: 0.9rem !important;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Highlight the Forward Looking block */
+.forward-block {
+    background: #f8fafc;
+}
+
+
+@media (max-width: 768px) {
+    .workflow-step { gap: 1.5rem; }
+    .workflow-grid::before { left: 25px; }
+}
+        .text-side { flex: 1; }
+        .step {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; padding: 0 15%;
+        }
+        .step h3 { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+
+        /* Impact Section */
+        .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .impact-card { background: #fff; padding: 2rem; border-radius: 24px; border: 1px solid #e2e8f0; }
+        .impact-card img { width: 100%; border-radius: 12px; margin-bottom: 1.5rem; }
+
+        /* Data Bars */
+        .bar-item { margin-bottom: 1.5rem; }
+        .bar-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 600; }
+        .bar-track { height: 10px; background: #e2e8f0; border-radius: 10px; }
+        .bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1s ease; }
+
+        @media (max-width: 900px) {
+            .module-reveal { flex-direction: column; }
+            .visual-side { position: relative; width: 100%; height: 60vh; }
+            .text-side { width: 100%; }
+            .strategy-content, .impact-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="glass-nav">
+    <a href="portfolio_home.html"><i class="fas fa-arrow-left"></i> PROJECTS</a>
+    <!--<a href="images/AmarDoctor_extended_case_study.pdf" target="_blank"><i class="fa-solid fa-file-pdf"> Extended Case Study</i></a>-->
+</nav>
+
+<header class="hero">
+    <div data-aos="zoom-out">
+        <h1>Healing Through Generative Vision</h1>
+        <p style="font-size: 1.5rem;">Designing a Conceptual AI-augmented visualization framework for trauma-informed therapy</p>
+    </div>
+
+</header>
+<section class="meta-section">
+    <div class="meta-container" data-aos="fade-up">
+        <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Concept Development, Research, Design</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Human-centered AI, Therapist-centered assistive tool</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Methods</span>
+            <span class="meta-value">Literature Review, Conceptual Design, Workflow Modeling</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Research Concept (no clinical deployment)</span>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="story-section dark-theme">
+        <div class="container">
+            <h2 data-aos="fade-up">Problem Space</h2>
+            <p class="large-text" data-aos="fade-up">Survivors of childhood trauma struggle with traditional visualization techniques used in therapy because they require imagination, emotional attunement, and imagery skills. Therapists often rely on guided imagery or symbolic techniques, but many clients experience emotional numbing or limited imaginative capacity.</p>
+            
+            <div class="challenge-grid">
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Difficulty Visualizing</h3>
+                    <p>Many clients struggle to form vivid inner imagery during trauma-related work.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Text-Heavy Tools</h3>
+                    <p>Most AI mental health systems are conversational, not visual or immersive.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Limited Clinical Controls</h3>
+                    <p>Generative video models lack clinical controls for tone, narrative, or personalization.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Lack of Therapeutic Aids</h3>
+                    <p>Therapists have no dedicated tools for safe, guided visualization sessions.</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+  
+
+
+<section class="story-section insights-bg">
+    <div class="container">
+        <h2 data-aos="fade-up">Research & Insights</h2>
+        <p class="large-text" data-aos="fade-up">Bridging the gap between clinical trauma-informed care and generative AI capabilities.</p>
+
+        <div class="insights-grid">
+            <div class="insights-column" data-aos="fade-right">
+                <span class="meta-label">Key Findings</span>
+                <ul class="finding-list">
+                    <li><strong>Cognitive Barriers:</strong> Many clients struggle with mental imagery due to emotional numbing, making traditional interventions like "inner child work" inaccessible.</li>
+                    <li><strong>Text-Heavy Gap:</strong> Existing AI tools are primarily text-based, failing to offer the emotional engagement found in visual therapy.</li>
+                    <li><strong>Lack of Control:</strong> While generative video is powerful, current models lack the necessary controls for clinical pacing, symbolic abstraction, and safety.</li>
+                    <li><strong>Human Mediation:</strong> Therapeutic practice requires therapists to regulate emotional intensity, AI must be a tool, not a replacement.</li>
+                </ul>
+            </div>
+
+            <div class="insights-column highlight-box" data-aos="fade-left">
+                <span class="meta-label" style="color: white;">Implications for Design</span>
+                <div class="implication-item">
+                    <i class="fas fa-user-md"></i>
+                    <div>
+                        <strong>Therapist-Directed</strong>
+                        <p>Systems must be "clinician-in-the-loop" rather than self-service apps.</p>
+                    </div>
+                </div>
+                <div class="implication-item">
+                    <i class="fas fa-sliders-h"></i>
+                    <div>
+                        <strong>Affective Controls</strong>
+                        <p>Fine-grained control over tone, pacing, and symbolic abstraction.</p>
+                    </div>
+                </div>
+                <div class="implication-item">
+                    <i class="fas fa-lock"></i>
+                    <div>
+                        <strong>Session-Bound</strong>
+                        <p>Outputs must be reviewed by therapists to ensure emotional safety and privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section class="story-section">
+        <div class="container">
+            <h1 data-aos="fade-right">Users & Stakeholders</h1>
+            <div class="strategy-content">
+                <div class="strategy-text" data-aos="fade-up">
+                    <p><b>Primary User</b>: Therapist (clinical authority)</p>
+                    <p><b>Secondary Beneficiary</b>: Client (experiential recipient)</p>
+                </div>
+                <div class="strategy-img" data-aos="fade-left">
+                    <img src="images/u1.png" alt="Interaction Flow" style="width:135%; margin-left:-60px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="story-section">
+        <div class="container">
+            <h1 data-aos="fade-right">Solution Concept</h1>
+            <div class="strategy-content">
+                <div class="strategy-text" data-aos="fade-up">
+                    <p>Designed a conceptual generative AI workflow that allows therapists to transform clinical understanding into emotionally aligned short video scenes, acting as a therapeutic visualization aid rather than a standalone AI therapist.</p>
+                </div>
+                <div class="strategy-img" data-aos="fade-up">
+                    <img src="images/framework.png" alt="Interaction Flow" style="width:130%; margin-left:-60px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section class="story-section workflow-bg">
+    <div class="container">
+        <h2 data-aos="fade-up">Workflow / Interaction Model</h2>
+        <p class="large-text" data-aos="fade-up">This workflow positions the therapist, not the client, as the primary actor who guides, configures, and validates generative outputs used in therapeutic sessions. The system functions as an assistive tool that transforms therapist-defined narrative intent into short visualizations, while preserving clinical oversight and emotional safety at every stage.</p>
+
+           <div class="strategy-img" data-aos="fade-left">
+                    <img src="images/workflow.png" alt="Interaction Flow" style="width:75%; margin-left:80px; margin-top:20px;">
+                </div>
+        <div class="workflow-grid">
+            <div class="workflow-step" data-aos="fade-right">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h4>Clinical Understanding & Narrative Structuring</h4>
+                    <p>Therapist gathers emotional, developmental, and contextual information through dialogue and observation.</p>
+                </div>
+            </div>
+
+            <div class="workflow-step" data-aos="fade-right" data-aos-delay="100">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h4>Specification of Visual & Emotional Parameters</h4>
+                    <p>Therapist configures key parameters, such as intended emotional tone (e.g., calm, validating), symbolic representation (e.g., avatar vs. abstract child), and pacing.</p>
+                </div>
+            </div>
+
+            <div class="workflow-step" data-aos="fade-right" data-aos-delay="200">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h4>Generative Synthesis (System)</h4>
+                    <p>The system processes narrative + emotional + optional visual anchors to synthesize short video sequences.</p>
+                </div>
+            </div>
+
+
+            <div class="workflow-step" data-aos="fade-right" data-aos-delay="300">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h4>Clinical Review & Refinement</h4>
+                    <p>Therapist reviews the generated content, adjusts tone, symbolism, or pacing, and requests revisions if needed.</p>
+                </div>
+            </div>
+
+              <div class="workflow-step" data-aos="fade-right" data-aos-delay="300">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h4>Guided Therapeutic Use</h4>
+                    <p>Therapist introduces the visualization during a session, contextualizes it, and facilitates reflection and emotional engagement.</p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+      
+</section>
+
+   <section class="story-section why-it-matters">
+    <div class="container">
+        <h2 data-aos="fade-up">Why It Matters</h2>
+        <p class="large-text" data-aos="fade-up">Addressing the visualization gap in trauma-informed therapy through responsible AI orchestration.</p>
+
+        <div class="why-grid">
+            <div class="why-card" data-aos="fade-up">
+                <span class="meta-label">The Context</span>
+                <p>Trauma therapies rely heavily on <strong>guided imagery</strong> for emotional processing. However, many clients face "imagery barriers" due to emotional numbing or limited imaginative capacity, making standard interventions inaccessible.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                <span class="meta-label">The Problem</span>
+                <p>Current digital health tools are predominantly <strong>text-based</strong> and lack immersive components. Meanwhile, raw Generative AI lacks the clinical controls and emotional safety guardrails required for therapy.</p>
+            </div>
+        </div>
+
+        <div class="why-visual" data-aos="zoom-in">
+            <img src="images/demo.png">
+            <p class="caption">Conceptual Model: Therapist-mediated visualization reduces client cognitive burden while maintaining emotional safety.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card impact-accent" data-aos="fade-up">
+                <span class="meta-label">The Opportunity</span>
+                <p>By positioning AI as a <strong>therapist-directed support tool</strong> rather than a replacement, we can enable controlled, session-bound visualization that lowers the cognitive bar for vulnerable clients.</p>
+            </div>
+            <div class="why-card impact-accent" data-aos="fade-up" data-aos-delay="100">
+                <span class="meta-label">The Impact</span>
+                <p>This approach drives higher engagement in experiential therapies and sets a standard for <strong>responsible, human-in-the-loop AI</strong> in high-stakes mental health contexts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="story-section reflection-bg" style="background: #18230F;">
+    <div class="container">
+        <h2 style="text-align: center; color: white;" data-aos="fade-up">Reflections</h2>
+        <p style="text-align: center; color:white;" class="large-text" data-aos="fade-up">Evolving from an AI-first assumption to a therapist-centered reality.</p>
+
+        <div class="reflection-grid">
+            
+            <div class="reflection-block" data-aos="fade-up">
+                <div class="reflection-header">
+                    <i class="fas fa-sync-alt"></i>
+                    <span class="meta-label">Process Shift</span>
+                </div>
+                <h4>What Changed</h4>
+                <p>I initially assumed a <strong>client-driven</strong> prompting model. Through research, I pivoted to a <strong>therapist-centered</strong> workflow to ensure clinical safety. This led to a total rethink of agency, control, and emotional pacing within the interface.</p>
+            </div>
+
+            <div class="reflection-block" data-aos="fade-up" data-aos-delay="100">
+                <div class="reflection-header">
+                    <i class="far fa-lightbulb"></i>
+                    <span class="meta-label">Design Insights</span>
+                </div>
+                <ul class="insight-mini-list">
+                    <li><i class="fas fa-check"></i> Emotional tone controls for therapists.</li>
+                    <li><i class="fas fa-check"></i> Variable symbolism (Literal vs. Abstract).</li>
+                    <li><i class="fas fa-check"></i> Mandatory review/approval loops.</li>
+                </ul>
+                <p class="note"><strong>Core takeaway:</strong> Clients should never "self-visualize" using raw, unfiltered AI prompts.</p>
+            </div>
+
+            <div class="reflection-block" data-aos="fade-up" data-aos-delay="200">
+                <div class="reflection-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="meta-label">Technical Gaps</span>
+                </div>
+                <p>Generative models currently lack <strong>emotion regulation</strong> and <strong>therapeutic personalization</strong>. This project sparked critical questions regarding the development of emotion models and safe content filtering in high-stakes mental health contexts.</p>
+            </div>
+
+            <div class="reflection-block forward-block" data-aos="fade-up" data-aos-delay="300">
+                <div class="reflection-header">
+                    <i class="fas fa-rocket"></i>
+                    <span class="meta-label">Forward Looking</span>
+                </div>
+                <p>The next phase involves prototyping the <strong>Control UI</strong> for emotion and pacing, followed by usability testing with clinicians to evaluate its impact on the <strong>therapeutic alliance</strong>.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <footer class="site-footer">
+  <p>© Nazmun Nahar | HCI Portfolio</p>
+</footer>
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Improved Video Sync Logic
+    const steps = document.querySelectorAll('.step');
+    const mainVideo = document.getElementById('feature-video');
+
+    window.addEventListener('scroll', () => {
+        steps.forEach(step => {
+            const rect = step.getBoundingClientRect();
+            // Trigger switch when the step text reaches the center of the screen
+            if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+                const newSrc = step.getAttribute('data-video');
+                const newPoster = step.getAttribute('data-poster');
+                if (mainVideo.src.indexOf(newSrc) === -1) {
+                    mainVideo.src = newSrc;
+                    mainVideo.poster = newPoster;
+                    mainVideo.load(); // Ensure the new poster and source load
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

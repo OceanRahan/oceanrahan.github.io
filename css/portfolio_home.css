@@ -1,0 +1,51 @@
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  aspect-ratio: 1 / 1; /* Maintains the square shape */
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: flex-end; /* Keeps text at the bottom */
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #007bff; /* Highlight color */
+}
+
+.card-content h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.view-project {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}

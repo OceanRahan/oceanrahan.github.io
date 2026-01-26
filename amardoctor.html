@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmarDoctor | Immersive Case Study</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --dark: #0f172a;
+            --accent: #2563eb;
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .site-footer {
+          text-align: center;
+          padding: 2.5rem;
+          font-size: 0.9rem;
+          color: #6b7280;
+        }
+
+         /* Meta-Data Section */
+    .meta-section {
+        background: #ffffff;
+        padding: 4rem 2rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .meta-container {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .meta-label {
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: var(--accent); /* Using your blue accent color */
+    }
+
+    .meta-value {
+        font-size: 1.1rem;
+        color: var(--dark);
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+
+        /* Nav */
+        .glass-nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1100px; z-index: 1000;
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px);
+            border-radius: 50px; border: 1px solid rgba(0,0,0,0.05);
+        }
+        .glass-nav a { text-decoration: none; color: var(--dark); font-weight: 600; }
+
+        /* Hero */
+        .hero {
+          height: 80vh; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          text-align: center; 
+          /* Replace 'your-image-path.jpg' with your actual image file */
+          background: linear-gradient(
+                    135deg, 
+                    rgba(0, 0, 0, 0.65), 
+                    rgba(0, 0, 0, 0.55)
+                ), 
+                      url('images/p3.jpg') no-repeat center center;
+          background-size: cover;
+          color: #ffffff; /* Ensures text is visible over the image */
+          padding: 0 20px;
+      }
+
+      .hero h1 { 
+          font-size: clamp(3rem, 8vw, 5rem); 
+          font-weight: 800; 
+          margin: 0; 
+          letter-spacing: -2px; 
+          color: #ffffff; 
+          text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      }
+
+      .hero p.hero-subtitle {
+        font-size: 1.5rem; 
+        max-width: 800px;
+        margin-top: 1.5rem;
+        /* Explicitly setting color to white with high opacity */
+        color: rgba(255, 255, 255, 0.95) !important; 
+        text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+      }
+
+        /* Problem Section (The Friction) */
+        .story-section { padding: 8rem 2rem; }
+        .dark-theme { background: var(--dark); color: #f8fafc; }
+        .container { max-width: 1100px; margin: auto; }
+        .large-text { font-size: 2rem; line-height: 1.4; margin-bottom: 2rem; }
+        
+        .challenge-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem; margin-top: 4rem;
+        }
+        .challenge-item { padding: 1.5rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.03); }
+
+        /* Design Strategy */
+        .strategy-content { display: flex; gap: 4rem; align-items: center; margin-top: 3rem; }
+        .strategy-text { flex: 1; font-size: 1.3rem; }
+        .strategy-img { flex: 1; }
+        .strategy-img img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* IMPROVED STICKY SCROLLING */
+        .module-reveal {
+            display: flex; position: relative;
+            background: #f8fafc;
+        }
+        .visual-side {
+            flex: 1; position: sticky; top: 0;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+        }
+        .video-wrapper {
+            width: 100%; max-width: 900px; aspect-ratio: 7/4;
+            margin-left: 50px;
+            background: #000; border-radius: 10px; overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        .video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
+        
+        .text-side { flex: 1; }
+        .step {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; padding: 0 15%;
+        }
+        .step h3 { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+
+        /* Impact Section */
+        .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .impact-card { background: #fff; padding: 2rem; border-radius: 24px; border: 1px solid #e2e8f0; }
+        .impact-card img { width: 100%; border-radius: 12px; margin-bottom: 1.5rem; }
+
+        /* Data Bars */
+        .bar-item { margin-bottom: 1.5rem; }
+        .bar-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 600; }
+        .bar-track { height: 10px; background: #e2e8f0; border-radius: 10px; }
+        .bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1s ease; }
+
+        @media (max-width: 900px) {
+            .module-reveal { flex-direction: column; }
+            .visual-side { position: relative; width: 100%; height: 60vh; }
+            .text-side { width: 100%; }
+            .strategy-content, .impact-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="glass-nav">
+    <a href="portfolio_home.html"><i class="fas fa-arrow-left"></i> PROJECTS</a>
+    <a href="images/AmarDoctor_extended_case_study.pdf" target="_blank"><i class="fa-solid fa-file-pdf"> Extended Case Study</i></a>
+</nav>
+
+<header class="hero">
+    <div data-aos="zoom-out">
+        <h1>AmarDoctor</h1>
+        <p style="font-size: 1.5rem;">Designing an AI-Driven, Multilingual Digital Health Platform for Underserved Communities</p>
+    </div>
+</header>
+
+<section class="meta-section">
+    <div class="meta-container" data-aos="fade-up">
+        <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">End-to-end designer & developer</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Human-centered AI, accessibility, conversational interfaces</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Output</span>
+            <span class="meta-value">Serving over 12k users in underserved communities</span>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="story-section dark-theme">
+        <div class="container">
+            <h2 data-aos="fade-up">The Friction</h2>
+            <p class="large-text" data-aos="fade-up">Existing digital health tools fail many users due to language barriers, rigid medical terminology, cognitively demanding menu-based navigation, and lack of technology that helps in daily decision making.</p>
+            
+            <div class="challenge-grid">
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Language Barriers</h3>
+                    <p>Colloquial symptom expressions are not supported.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Health Literacy Gaps in Everyday Decision-Making</h3>
+                    <p>Lack of guidance on which specialist to consult and how to adjust diet, making routine health decisions difficult.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Fragmented Medical History</h3>
+                    <p>Paper-based records are often lost, damaged, or hard to maintain over long-term care.</p>
+                </div>
+                <div class="challenge-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Digital Unfamiliarity</h3>
+                    <p>Form-driven interfaces impose high cognitive load.</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <h2 data-aos="fade-right">Design Strategy</h2>
+            <div class="strategy-content">
+                <div class="strategy-text" data-aos="fade-up">
+                    <p>Redesigned the interaction from menu navigation to <strong>conversational dialogue</strong>, allowing users to communicate concerns using natural language.</p>
+                    <p>Prioritized accessibility through voice input and reduced text density.</p>
+                </div>
+                <div class="strategy-img" data-aos="fade-left">
+                    <img src="images/ss.png" alt="Interaction Flow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="module-reveal">
+        <div class="visual-side">
+            <div class="video-wrapper">
+                <video id="feature-video" controls poster="images/poster1.png">
+                    <source src="images/Symptom_Checker.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="text-side">
+            <div class="step" data-video="images/Symptom_Checker.mp4" data-poster="images/poster1.png">
+                <h3>Symptom Assessment</h3>
+                <p style="font-size: 15pt;">Initial symptom input followed by a dynamic triage flow that adapts to user responses.</p>
+            </div>
+            <div class="step" data-video="images/Food_Guidance.mp4" data-poster="images/poster2.png">
+                <h3>Dietary Guidance</h3>
+                <p style="font-size: 15pt;">Culturally contextual recommendations based on locally available foods.</p>
+            </div>
+            <div class="step" data-video="images/digitization.mp4" data-poster="images/digitization.png">
+                <h3>Medical Documents Digitization</h3>
+                <p style="font-size: 15pt;">Converts paper records into structured digital data for longitudinal access.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Evaluation & Impact</h2>
+            <p class="large-text">Among 13,388 users, conversational modules showed the highest engagement.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card" data-aos="fade-up">
+                    <img src="images/evaluation2.png" alt="Engagement Stats">
+                    <p>Generated <b>158,858</b> interaction events over 28 days.</p>
+                </div>
+                <div class="impact-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/evaluation.png" alt="Module Depth">
+                    <div class="bar-item">
+                        <div class="bar-label"><span>Dynamic Triage</span> <span>7.51</span></div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label"><span>Chatbot Module</span> <span>5.56</span></div>
+                       <div class="bar-track"><div class="bar-fill" style="width: 70%;"></div></div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label"><span>Static Forms</span> <span>1.50</span></div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 20%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" style="text-align:center; background: #0f172a;">
+        <div class="container" data-aos="zoom-in">
+            <h2 style="color: white;">Reflection</h2>
+            <p style="font-size: 1.5rem; color: white; max-width: 800px; margin: auto;">"Engagement and trust in health AI are driven by how well interaction models align with users’ language and cognitive patterns".</p>
+        </div>
+    </section>
+    <footer class="site-footer">
+  <p>© Nazmun Nahar | HCI Portfolio</p>
+</footer>
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Improved Video Sync Logic
+    const steps = document.querySelectorAll('.step');
+    const mainVideo = document.getElementById('feature-video');
+
+    window.addEventListener('scroll', () => {
+        steps.forEach(step => {
+            const rect = step.getBoundingClientRect();
+            // Trigger switch when the step text reaches the center of the screen
+            if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+                const newSrc = step.getAttribute('data-video');
+                const newPoster = step.getAttribute('data-poster');
+                if (mainVideo.src.indexOf(newSrc) === -1) {
+                    mainVideo.src = newSrc;
+                    mainVideo.poster = newPoster;
+                    mainVideo.load(); // Ensure the new poster and source load
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
