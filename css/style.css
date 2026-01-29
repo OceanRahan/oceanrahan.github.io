@@ -10,17 +10,17 @@
 }
 
 /* --- MOBILE RESPONSIVENESS FIX --- */
-@media (max-width: 900px) {
+
+
+@media(max-width: 900px) {
     .layout { 
-        display: block; /* Break the grid so sidebar and content stack vertically */
-        width: 100%;
+        display: block; /* Simpler than grid for mobile performance */
+        grid-template-columns: none;
     }
-    
     .sidebar { 
         height: auto; 
         position: relative; 
-        width: 100%; 
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
     }
 
     .content { 
@@ -31,7 +31,6 @@
     .timeline { padding-left: 1rem; }
     .timeline-card { margin-left: 1rem; }
 }
-
 body {
     font-family: 'EB Garamond', serif;
     background: #f1f5f9;

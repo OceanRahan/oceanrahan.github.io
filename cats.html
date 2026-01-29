@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feline Companions | Ocean Rahan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+        /* --- CORE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%;
+            font-family: 'EB Garamond', serif;
+            background: #0f172a; /* Dark background from your test.html */
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 2rem 5%;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent);
+            backdrop-filter: blur(5px);
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { opacity: 1; transform: translateX(-5px); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('images/lochon1.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: -10vh;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 400;
+            letter-spacing: -2px;
+        }
+
+        /* --- CONTENT SECTION --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5% 5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .story-card p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        /* --- CHARACTER GRID --- */
+        .cats-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .cat-profile h2 {
+            font-size: 2.5rem;
+            color: #03A6A1; /* Brand color from style.css */
+            margin-bottom: 1rem;
+        }
+
+        .cat-profile h2 span {
+            font-size: 1rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+
+        
+
+        /* --- GALLERY GRID --- */
+        .gallery-title {
+            text-align: center;
+            margin: 6rem 0 3rem;
+            font-size: 2.5rem;
+        }
+
+        .photo-gallery {
+            columns: 2 400px;
+            column-gap: 1.5rem;
+        }
+
+         .img-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden; /* Vital: Keeps the zoom inside the card */
+            background: #1e293b;
+            break-inside: avoid;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s ease;
+        }
+        
+        .photo-gallery img {
+            width: 100%;
+            display: block;
+           
+            transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1), filter 0.5s ease;
+            will-change: transform;
+            filter: brightness(0.9);
+        }
+        
+    
+         .img-wrapper:hover img {
+            transform: scale(1.2); /* Adjusted zoom level for elegance */
+            filter: brightness(1.1);
+        }
+ 
+
+       
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .cats-detail-grid { grid-template-columns: 1fr; }
+            .story-card { padding: 2rem; }
+            .hero { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="other.html" class="back-link"><span>&#8592;</span> Back to Interests</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Feline <br>Companions</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="story-card">
+            <p>
+                My lifelong affection for cats began in early childhood. What started as a mouser brought home by my father blossomed into a profound empathy and connection that has stayed with me through every stage of life.
+            </p>
+            
+            <div class="cats-detail-grid">
+                <div class="cat-profile">
+                    <h2><span>The Older Daughter</span>Lochon</h2>
+                    <p style="font-size: 1.1rem;">
+                        At four years old, Lochon is the vocal heartbeat of the house. Though often anxious and paranoid, she expresses her energy through endless dashes around the home.
+                    </p>
+                </div>
+
+                <div class="cat-profile">
+                    <h2><span>The Younger Daughter</span>Floria</h2>
+                    <p style="font-size: 1.1rem;">
+                        A two years old, Floria is the perfect contrast, quiet, relaxed, and a lover of sleep. While she occasionally joins the chase, she represents the calm in the household.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+       
+       <h2 class="gallery-title">Captured Moments</h2>
+<div class="photo-gallery">
+    <div class="img-wrapper">
+        <img src="images/lochon1.jpg" alt="Lochon portrait">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/lochon2.jpg" alt="Lochon dashing">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/floria1.jpg" alt="Floria relaxing">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/cat2.jpg" alt="Lochon as a kitten">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/floria2.jpg" alt="Floria sleeping">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/lochon3.jpg" alt="Lochon playing">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/floria3.jpg" alt="Floria staring">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/cat1.jpg" alt="Both staring">
+    </div>
+    <div class="img-wrapper">
+        <img src="images/cat3.jpg" alt="Floria sitting">
+    </div>
+</div>
+    </main>
+
+    <script>
+        // Simple scroll reveal for the gallery
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.photo-gallery img').forEach(img => {
+            img.style.opacity = "0";
+            img.style.transform = "translateY(20px)";
+            img.style.transition = "0.6s ease-out";
+            observer.observe(img);
+        });
+    </script>
+</body>
+</html>

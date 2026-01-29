@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dramatic Art | Ocean Rahan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'EB Garamond', serif; background: #0f172a; color: #f8fafc; line-height: 1.6; }
+        
+        .top-nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 2rem 5%; background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent); }
+        .back-link { text-decoration: none; color: white; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; opacity: 0.7; transition: 0.3s; }
+        .back-link:hover { opacity: 1; transform: translateX(-5px); }
+
+        .hero-banner { height: 50vh; background: radial-gradient(circle at center, rgba(3, 166, 161, 0.2), transparent), url('images/theatre-bg.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero-banner h1 { font-size: 5rem; font-weight: 400; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+        .content-wrap { max-width: 900px; margin: -5rem auto 5rem; padding: 0 5%; position: relative; }
+        .intro-card { background: #1e293b; padding: 4rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-bottom: 4rem; }
+        .intro-card p { font-size: 1.4rem; color: #cbd5e1; font-style: italic; }
+
+        .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .spotlight-card { border: 1px solid rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; transition: 0.4s; }
+        .spotlight-card:hover { border-color: #03A6A1; background: rgba(3, 166, 161, 0.05); }
+        .spotlight-card h3 { font-size: 2rem; color: #03A6A1; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav"><a href="other.html" class="back-link"><span>&#8592;</span> Back to Interests</a></nav>
+
+    <header class="hero-banner"><h1>Dramatic Art</h1></header>
+
+    <main class="content-wrap">
+        <div class="intro-card">
+            <p>"I find immense pleasure in attending theatre plays. They offer a refreshing escape from everyday life, allowing me to immerse myself in worlds distinct from the scientific realm I often inhabit."</p>
+        </div>
+
+        <div class="spotlight-grid">
+            <div class="spotlight-card">
+                <h3>Company</h3>
+                <p>A powerful portrayal of British colonial exploitation and the historical fall of Siraj Ud-Doula.</p>
+            </div>
+            <div class="spotlight-card">
+                <h3>Chitrangada</h3>
+                <p>An intimate production with a circular stage that placed the performers directly among the audience.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

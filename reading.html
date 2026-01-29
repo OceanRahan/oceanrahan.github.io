@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading | Ocean Rahan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'EB Garamond', serif; background: #0f172a; color: #f8fafc; line-height: 1.8; }
+        
+        .top-nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 2rem 5%; background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent); }
+        .back-link { text-decoration: none; color: white; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; opacity: 0.7; transition: 0.3s; }
+        .back-link:hover { opacity: 1; transform: translateX(-5px); }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 10rem 5% 5rem; }
+        h1 { font-size: 4rem; font-weight: 400; margin-bottom: 3rem; color: #ffffff; border-left: 4px solid #03A6A1; padding-left: 1.5rem; }
+        
+        .reading-section { margin-bottom: 4rem; animation: fadeInUp 0.8s ease-out; }
+        .reading-section h2 { font-size: 1.8rem; color: #03A6A1; margin-bottom: 1rem; font-style: italic; }
+        .reading-section p { font-size: 1.3rem; color: #cbd5e1; margin-bottom: 1.5rem; }
+        
+        .book-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .book-item { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+        .book-item strong { display: block; font-size: 1.2rem; color: white; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="other.html" class="back-link"><span>&#8592;</span> Back to Interests</a>
+    </nav>
+
+    <main class="container">
+        <h1>Reading</h1>
+
+        <section class="reading-section">
+            <h2>The Magic of Early Tales</h2>
+            <p>When I was very young, I loved fairy tales. They felt like magical doors to amazing places. Though I have grown, the bright covers in a bookstore still evoke that old magic.</p>
+        </section>
+
+        <section class="reading-section">
+            <h2>Literary Foundations</h2>
+            <p>In my teens, I immersed myself in the works of Bengali masters, often finishing novels in just a couple of days.</p>
+            <div class="book-list">
+                <div class="book-item"><strong>Pather Panchali</strong>Bibhutibhushan Bandyopadhyay</div>
+                <div class="book-item"><strong>Pather Dabi</strong>Sarat Chandra Chattopadhyay</div>
+                <div class="book-item"><strong>Golpo Guccho</strong>Rabindranath Tagore</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

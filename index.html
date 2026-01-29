@@ -199,7 +199,7 @@ document.getElementById("other-interest").addEventListener("click", function (e)
 <h3>Symptom Checker & Clinical Decision Support System</h3>
 <p style="font-size: 14pt"><strong>Problem:</strong> Many patients face difficulty articulating their symptoms and identifying the right specialist.</p>
                     <p style="font-size: 14pt"><strong>Solution:</strong> Designed a symptom checker that suggests relevant symptoms, asks targeted follow-up questions, and provides provisional diagnoses along with specialist recommendations.</p>
-                    <p style="font-size: 14pt"><strong>Impact:</strong> SAchieved <strong>87%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
+                    <p style="font-size: 14pt"><strong>Impact:</strong> Achieved <strong>81%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
                     <br>
                    <p style="font-size: 14pt"><img src = "images/symptom_checker.png" style="width: 100%; height:430px; max-width: 100%;"></p>
                       <div class="project-links">
@@ -285,35 +285,50 @@ document.getElementById("other-interest").addEventListener("click", function (e)
 
 </div>
 <script>
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")});
-},{threshold:.15});
-document.querySelectorAll(".section,.card").forEach(el=>obs.observe(el));
+  const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")});
+  },{threshold:.15});
+  document.querySelectorAll(".section,.card").forEach(el=>obs.observe(el));
 </script>
+
+
 <script>
-const navLinks=document.querySelectorAll(".top-nav a");
 
-navLinks.forEach(link=>{
-link.onclick=e=>{
-e.preventDefault();
-document.querySelector(link.getAttribute("href"))
-.scrollIntoView({behavior:"smooth"});
-};
+  // 1. Fix "Back Button" Invisible Page Cache
+window.addEventListener("pageshow", function(event) {
+    // Removes the 'exit' class if the page is loaded from browser cache (back button)
+    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        document.body.classList.remove("page-exit");
+        document.body.style.opacity = "1";
+    }
 });
 
-const sections=document.querySelectorAll(".section");
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(sec=>{
-const top=window.scrollY;
-const offset=sec.offsetTop-200;
-const height=sec.offsetHeight;
-if(top>=offset && top<offset+height) current=sec.id;
+// 2. Optimized Page Transitions
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+    
+    links.forEach(link => {
+        link.addEventListener("click", e => {
+            const destination = link.href;
+            
+            // Prevent transition if it's the same page
+            if (destination === window.location.href) return;
+
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+
+            // Navigate after the transition finishes
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 400); 
+        });
+    });
 });
-navLinks.forEach(a=>{
-a.classList.toggle("active",a.getAttribute("href")==="#"+current);
-});
-});
+
+// 3. Scroll Restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'auto'; // Ensures back button returns to previous scroll spot
+}
 </script>
 
 

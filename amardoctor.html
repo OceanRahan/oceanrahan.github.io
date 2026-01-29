@@ -340,5 +340,23 @@
         });
     });
 </script>
+
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        
+        // Don't break external links or anchor tags
+        if (!href || href.startsWith('#') || link.target === '_blank') return;
+
+        e.preventDefault();
+        document.body.classList.add('page-exit');
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 500); // Matches your 0.5s CSS transition
+    });
+});
+
 </body>
 </html>
