@@ -1,336 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Nazmun Nahar | Healthcare AI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Nazmun Nahar | Healthcare AI & R&D Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+        /* --- MODERN CORE STYLES --- */
+        :root {
+            --bg-dark: #0f172a;
+            --accent: #03A6A1;
+            --text-main: #f8fafc;
+            --text-dim: #cbd5e1;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --border: rgba(255, 255, 255, 0.1);
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'EB Garamond', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .layout { display: flex; min-height: 100vh; }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            width: 350px;
+            height: 100vh;
+            position: fixed;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(3, 166, 161, 0.05) 100%);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            margin-bottom: 1.5rem;
+            filter: grayscale(20%);
+            transition: 0.5s;
+        }
+
+        .sidebar h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; text-align: center; }
+        .subtitle { font-size: 1rem; color: var(--accent); margin-bottom: 2rem; text-align: center; opacity: 0.9; }
+
+        .links { width: 100%; display: flex; flex-direction: column; gap: 0.8rem; }
+        .links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+        }
+
+        .links a:hover { color: white; background: rgba(255, 255, 255, 0.05); transform: translateX(5px); }
+
+        /* --- CONTENT AREA --- */
+        .content { margin-left: 350px; flex: 1; padding: 0 8%; }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem 0;
+            display: flex;
+            gap: 2.5rem;
+            z-index: 90;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        /* --- SECTIONS --- */
+        .section { padding: 6rem 0; opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .section.show { opacity: 1; transform: translateY(0); }
+
+        h2 { font-size: 2.8rem; margin-bottom: 3rem; font-weight: 400; letter-spacing: -1px; }
+
+        /* --- TIMELINE STYLES --- */
+        .timeline { position: relative; border-left: 1px solid var(--accent); padding-left: 2rem; margin-left: 1rem; }
+        .timeline-item { position: relative; margin-bottom: 4rem; }
+        .timeline-dot { 
+            position: absolute; left: -2.35rem; top: 10px; 
+            width: 10px; height: 10px; background: var(--accent); 
+            border-radius: 50%; box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* --- PROJECT CARDS --- */
+        .project-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--accent); font-weight: 500; }
+        .card strong { color: white; }
+        .card p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 1rem; }
+
+        .tag-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+        .tag { background: rgba(3, 166, 161, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(3, 166, 161, 0.2); }
+
+        .btn-group { display: flex; gap: 1.5rem; margin-top: 2rem; }
+        .btn { text-decoration: none; color: white; font-size: 1rem; display: flex; align-items: center; gap: 8px; opacity: 0.8; transition: 0.3s; }
+        .btn:hover { opacity: 1; color: var(--accent); }
+
+        /* --- FOOTER --- */
+        .footer { text-align: center; padding: 5rem 0; border-top: 1px solid var(--border); }
+        .footer-socials { display: flex; justify-content: center; gap: 2.5rem; font-size: 1.6rem; margin: 2rem 0; }
+        .footer-socials a { color: var(--text-dim); transition: 0.3s; }
+        .footer-socials a:hover { color: var(--accent); transform: translateY(-3px); }
+
+        /* --- ANIMATIONS --- */
+        .page-exit { opacity: 0; transition: 0.5s; }
+
+        @media (max-width: 1100px) {
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; padding: 2rem; }
+            .content { margin-left: 0; }
+            .top-nav { display: none; }
+        }
+    </style>
 </head>
 
 <body>
-
 <div class="layout">
-
-<!-- LEFT SIDEBAR -->
-<aside class="sidebar">
-  <img src="images/img5.jpg" class="profile-img">
-
-  <h1>Nazmun Nahar</h1>
-  <p class="subtitle">R&D Engineer · Digital Health · HCI</p>
-
-  <div class="links">
-    <a href="images/Nazmun_Nahar.pdf"><i class="fas fa-file-pdf"></i> CV</a>
-    <a href="https://scholar.google.com/citations?user=oxADXwQAAAAJ"><i class="fas fa-graduation-cap"></i>Google Scholar</a>
-    <a href="mailto:oceanrahan@gmail.com" title="Email"><i class="fas fa-envelope"></i> oceanrahan@gmail.com</a>
-    <a href="https://www.linkedin.com/in/nazmun-nahar-81670b149"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://orcid.org/0009-0003-3708-9029"><i class="fab fa-orcid"></i> ORCID</a>
-    <a href="https://www.researchgate.net/profile/Nazmun-Nahar-21"><i class="fab fa-researchgate"></i> ResearchGate</a>
-       
-  </div>
-</aside>
-
-<!-- RIGHT CONTENT -->
-<main class="content">
-<nav class="top-nav">
-  <a href="#about">About</a>
-  <a href="#preprints">Preprints</a>
-  <a href="#experience">Professional Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#portfolio" id="portfolio">Portfolio</a>
-  <script>
-document.getElementById("portfolio").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  // Add fade-out class
-  document.body.classList.add("page-exit");
-
-  // Wait for animation, then navigate
-  setTimeout(() => {
-    window.location.href = "portfolio.html";
-  }, 500);   // must match CSS duration
-});
-</script>
-
-  <a href="#other-interest" id="other-interest">Personal Interests</a>
- <script>
-document.getElementById("other-interest").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  // Add fade-out class
-  document.body.classList.add("page-exit");
-
-  // Wait for animation, then navigate
-  setTimeout(() => {
-    window.location.href = "other.html";
-  }, 500);   // must match CSS duration
-});
-
-
-</script>
-
-</nav>
-
-<section id="about" class="section">
-<h2>About</h2>
-<p style="font-size: 14pt;">As an R&D Engineer at <a href="https://medaihealth.com" style="color: blue;">MedAi Limited</a>, I design AI-driven healthcare solutions focused on human-centered computing. With over 4+ years of experience, I have built culturally-aware, linguistically-inclusive solutions for the digital healthcare platform: <i>AmarDoctor</i>, improving primary care access for underserved communities in South Asia.</p>
-                    
-                    <p style="font-size: 14pt;">I’m passionate about working at the intersection of cutting-edge AI research and real-world challenges. My interests include machine learning, mobile health, health informatics, and human-computer interaction, with a strong emphasis on ethical, inclusive, and human-responsive technologies.</p>
-
-                    <p style="font-size: 14pt;">I earned my Bachelor’s degree in Computer Science and Engineering from Bangladesh University of Engineering and Technology (BUET). For my thesis, I worked under the supervision of Professor <a href="https://cse.buet.ac.bd/faculty_list/detail/mdmonirulislam">Dr. Md. Monirul Islam.</a> on <a href=https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link>Bengali OCR Using Deep Learning</a>, where I built a dataset from printed Bengali documents and trained deep learning model using CNNs, RNNs, and LSTMs, achieving an accuracy of 87.3%.</p>
-
-                    <br>
-                      <h3>Research Interests</h3><p style="font-size: 14pt;">
-                    AI for Healthcare | HCI | Human-Centered and Explainable AI | Accessible Computing | Multimodal Learning</p>
-
-<br>
-<section id="preprints" class="section">
-<h2>Preprints</h2>
-<ul>
-<li style="font-size: 14pt"><b>Generative AI for Trauma-Informed Care</b> – Nazmun Nahar; <i>"Healing Through Generative Vision: A Multimodal AI Framework for Trauma-Informed Therapeutic Visualization"</i> – extended working-paper version of earlier accepted idea paper at AIHealth 2026 <a href="https://www.researchgate.net/publication/399769670">. paper</a></li>
-<br>
-<li style="font-size: 14pt"><b>AmarDoctor</b> – Nazmun Nahar et al. <i>  "An AI-Driven, Multilingual, Voice-Interactive Digital Health Application for Primary Care Triage and Patient Management to Bridge the Digital Health Divide for Bengali Speakers"</i>. arXiv preprint arXiv:2510.24724 <a href="https://arxiv.org/abs/2510.24724">. paper</a> (2025)</li>
-<br>
-<li style="font-size: 14pt"><b>Biomedical ASR in Bengali</b> – Shariar Kabir; Nazmun Nahar; et al. <i>"Automatic Speech Recognition of Biomedical Data in Bengali Language."</i> arXiv preprint arXiv:2406.12931. <a href="https://arxiv.org/abs/2406.12931">paper</a> (2024)</p> </li>
-</ul>
-</section>
-
-
-
-<section id="experience" class="section experience-section">
-
-  <h2 class="section-title">Professional Experience</h2>
-
-  <div class="timeline">
-
-    <!-- MedAi -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-card">
-        <div class="timeline-header">
-          <h3>1. Research & Development Engineer</h3>
-          <span class="company"><a href="https://www.medaihealth.com" style="color: #03A6A1; text-decoration: None;">MedAi Limited</a></span>
-          <span class="date">(2021 – Present)</span>
+    <aside class="sidebar">
+        <img src="images/img5.jpg" class="profile-img" alt="Nazmun Nahar">
+        <h1>Nazmun Nahar</h1>
+        <p class="subtitle">R&D Engineer · Digital Health · HCI</p>
+        
+        <div class="links">
+            <a href="images/Nazmun_Nahar.pdf"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
+            <a href="https://scholar.google.com/citations?user=oxADXwQAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="mailto:oceanrahan@gmail.com"><i class="fas fa-envelope"></i> oceanrahan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/nazmun-nahar-81670b149"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            <a href="https://orcid.org/0009-0003-3708-9029"><i class="fab fa-orcid"></i> ORCID Record</a>
         </div>
+    </aside>
 
-        <ul>
-          <li>
-            Designed and developed 
-            <a href="https://www.amardoctor.health/" target="_blank">
-              <strong>AmarDoctor</strong>
-            </a>, 
-            an AI-powered multilingual telemedicine platform improving healthcare access.
-          </li>
+    <main class="content">
+        <nav class="top-nav">
+            <a href="#about">About</a>
+            <a href="#preprints">Preprints</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            
+            <a href="#portfolio" id="portfolio">Portfolio</a>
+            <script>
+                document.getElementById("portfolio").addEventListener("click", function (e) {
+                  e.preventDefault();
 
-          <li>
-            Built the <strong>Symptom Checker</strong> and <strong>Clinical Decision Support System</strong> enabling intelligent triage and diagnostic assistance.
-          </li>
+                  // Add fade-out class
+                  document.body.classList.add("page-exit");
 
-          <li>
-            Architected and deployed a scalable <strong>AWS cloud infrastructure</strong> ensuring reliability and performance.
-          </li>
+                  // Wait for animation, then navigate
+                  setTimeout(() => {
+                    window.location.href = "portfolio.html";
+                  }, 500);   // must match CSS duration
+                });
+            </script>
+            <a href="other.html" style="color: var(--accent);">Personal Interests</a>
+        </nav>
 
-          <li>
-            Developed a <strong>TypeDB knowledge graph</strong> modeling diseases, symptoms, patients, and consultations.
-          </li>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <div class="card">
+                <p style="font-size: 1.3rem;">As an R&D Engineer at <a href="https://medaihealth.com" style="color: var(--accent); text-decoration: none;">MedAi Limited</a>, I design AI-driven healthcare solutions focused on human-centered computing. With over 4+ years of experience, I build culturally-aware solutions for <i>AmarDoctor</i>, improving primary care access for underserved communities.</p>
+                <br>
+                <p style="font-size: 14pt;">I earned my Bachelor’s degree in Computer Science and Engineering from Bangladesh University of Engineering and Technology (BUET). For my thesis, I worked under the supervision of Professor <a href="https://cse.buet.ac.bd/faculty_list/detail/mdmonirulislam" style="color: var(--accent); font-weight: 500;">Dr. Md. Monirul Islam.</a> on <a href="https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link" style="color: var(--accent); font-weight: 500;">Bengali OCR Using Deep Learning</a>, where I built a dataset from printed Bengali documents and trained deep learning model using CNNs, RNNs, and LSTMs, achieving an accuracy of 87.3%.</p>
 
-          <li>
-            Led backend engineering using <strong>Django REST Framework</strong> and API-first architecture.
-          </li>
-        </ul>
-      </div>
-    </div>
-<br>
-    <!-- Teaching -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-card">
-        <div class="timeline-header">
-          <h3>2. Instructor</h3>
-          <span class="company">Bangladesh Institute of Science & Technology</span>
-          <span class="date">(2019 – 2020)</span>
-        </div>
-
-        <ul>
-          <li>
-           CS520223 Microprocessors and Assembly (theory and lab).
-          </li>
-
-          <li>
-            CS540206 Computer Graphics (lab).
-          </li>
-           <li>
-            CS540219 Network and Information Security (theory).
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
+                <div class="tag-row">
+                    <span class="tag">AI for Healthcare</span>
+                    <span class="tag">HCI</span>
+                    <span class="tag">Accessible Computing</span>
+                    <span class="tag">Mental Health</span>
+                    <span class="tag">Multimodal Learning</span>
+                </div>
+            </div>
+        </section>
 
 
-<section id="projects" class="section">
-<h2>Projects</h2>
+         <section id="preprints" class="section">
+            <h2>Preprints</h2>
+            <div class="card">
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 2rem;">
+                        <strong style="color: var(--accent);">Generative AI for Trauma-Informed Care</strong><br>
+                        <span style="opacity: 0.8;">Nazmun Nahar; "Healing Through Generative Vision: A Multimodal AI Framework" (Accepted at AIHealth). <a href="https://www.researchgate.net/publication/399769670" style="color: var(--accent);"> pdf</a> (2026)</span>
+                    </li>
 
-<div class="card">
-<h3>AmarDoctor – AI-powered Digital Health Platform</h3>
-<i class="fa-solid fa-file-pdf" style="height:20px;"></i>
-            <a href="images/AmarDoctor_extended_case_study.pdf" target="_blank" style="color:#2d3748; font-size:18px;"><strong>Extended Case Study</strong></a>
-                    <p style="font-size: 14pt"><strong>Problem:</strong> Lack of AI-driven primary care access for Bengali speakers, engendering healthcare accessibility barriers for South Asian populations.</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong> Designed and developed the AmarDoctor platform, featuring a colloquial-language symptom checker and a clinical decision support system that streamlines consultations and reduces physician burnout.</p>
-                    <p style="font-size: 14pt"><strong>Impact:</strong> A first-of-its-kind AI-powered platform that has served over 12,000 Bengali-speaking users, delivering more than 4000 personalized healthcare consultations as of now.</p>
-                    <p style="font-size: 14pt"><strong>Award: </strong>AmarDoctor was selected as a Solver Team in the 2024 <a href="https://solve.mit.edu/solutions/86473">MIT Solve Global Health Equity Challenge</a> for its AI-powered, culturally inclusive telemedicine platform serving Bengali-speaking communities. The award recognizes its impact in advancing equitable access to primary care.</p>
-                    
-                    <br>
-                     <div class="project-links">
-                        <a href="https://amardoctor.health"><i class="fas fa-globe"></i> Website</a>
-                        <!--
-                         <a href="https://play.google.com/store/apps/details?id=com.medai.amardaktar&pcampaignid=web_share&pli=1"><i class="fab fa-google-play"></i> APP</a>-->
-                    </div>
-</div>
+                    <li style="margin-bottom: 2rem;">
+                        <strong style="color: var(--accent);">AmarDoctor</strong><br>
 
-<div class="card">
-<h3>Symptom Checker & Clinical Decision Support System</h3>
-<p style="font-size: 14pt"><strong>Problem:</strong> Many patients face difficulty articulating their symptoms and identifying the right specialist.</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong> Designed a symptom checker that suggests relevant symptoms, asks targeted follow-up questions, and provides provisional diagnoses along with specialist recommendations.</p>
-                    <p style="font-size: 14pt"><strong>Impact:</strong> Achieved <strong>81%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
-                    <br>
-                   <p style="font-size: 14pt"><img src = "images/symptom_checker.png" style="width: 100%; height:430px; max-width: 100%;"></p>
-                      <div class="project-links">
-                        <a href="https://drive.google.com/file/d/11yJc_9NbuYIQ3jWbYzfN_tKYec8VJWw_/view?usp=drive_link"><i class="fas fa-video"></i> Demo</a>
-                    </div>
-</div>
+                        <span style="opacity: 0.8;">Nazmun Nahar et al. "An AI-Driven, Multilingual, Voice-Interactive Digital Health Application for Primary Care Triage and Patient Management to Bridge the Digital Health Divide for Bengali Speakers". (arXiv arXiv:2510.24724). <a href="https://arxiv.org/abs/2510.24724" style="color: var(--accent);">pdf</a> (2025)</li>
 
-<div class="card">
-<h3>Medical History-Driven Dietary Recommendation System</h3>
-<p><strong>Problem:</strong> Gap between visual food recognition technology and personalized medical dietary counseling for chronic disease management.</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong>  Integrated computer vision-based food classification with medical knowledge systems for condition-specific dietary filtering and recommendation generation.</p>
-                    <p style="font-size: 14pt"><strong>Impact:</strong> Enables real-time food guidance automation, potentially improving patient adherence to medical dietary restrictions to manage chronic conditions.</p>
-                    <br>
-                    <p style="font-size: 14pt"><img src = "images/food.png" style="width: 100%; height:430px; max-width: 100%;"></p>
-                   
-                    <div class="project-links">
-                        <a href="https://drive.google.com/file/d/1yX4-jM6TSIc8Oj2QOsO7iLKvHl-1_jGh/view?usp=drive_link"><i class="fas fa-video"></i> Demo</a>
-                    </div>
-</div>
+                    <li style="margin-bottom: 2rem;">
+                        <strong style="color: var(--accent);">Biomedical ASR in Bengali</strong><br>
+                        <span style="opacity: 0.8;">Shariar Kabir; Nazmun Nahar; et al. "Automatic Speech Recognition of Biomedical Data in Bengali Language." (arXiv:2406.12931). <a href="https://arxiv.org/abs/2406.12931" style="color: var(--accent);">pdf</a> (2024)</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-<div class="card">
- <h3>Medical Assistant Chatbot → LLM-Powered Conversational Interface</h3>
-                    <p style="font-size: 14pt"><strong>Problem:</strong>Users need to describe symptoms and access care without navigating complex interfaces</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong>Started as a RASA-based intent classifier for mental vs. physical health triage; evolved into an LLM-powered assistant that serves as AmarDoctor’s primary entry point, handling symptom assessment, appointment booking, and care navigation in natural dialogue.</p>
-                    <p style="font-size: 14pt"><strong>User Experience: </strong>Natural dialogue-based interface adapting to user abilities and communication styles.</p>
-                    <br>
-                    <div class="project-links">
-                        <a href="https://github.com/OceanRahan/medical-assistant-chatbot"><i class="fab fa-github"></i> GitHub</a> 
-                         <a href="https://drive.google.com/file/d/1yX4-jM6TSIc8Oj2QOsO7iLKvHl-1_jGh/view?usp=drive_link"><i class="fas fa-video"></i> Demo</a>
-                    </div>                    
-</div>
-
-<div class="card">
-                    <h3>Bengali OCR Using Deep Learning</h3>
-                    <p style="font-size: 14pt"><strong>Problem:</strong> Lack of effective optical character recognition systems for Bengali printed text, hindering digitization of Bengali literature and documents.</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong> Developed novel Bengali word image dataset from printed documents, designed and trained deep neural network architectures for character sequence recognition.</p>
-                    <p style="font-size: 14pt"><strong>Impact: </strong>Achieved 87.3% word recognition accuracy, contributing to low-resource language NLP research and digital preservation of Bengali texts. </p>
-
-                    <p style="font-size: 14pt"> <b>Tech Stack:</b> Tensorflow, Keras, OpenCV
-                    </p>
-                    <div class="project-links">
-                        <a href="https://www.kaggle.com/datasets/oceanrahan/final-train"><i class="fa-solid fa-database"></i> Dataset</a>
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <h3>Research & Development Engineer</h3>
+                        <p style="color: var(--accent); font-weight: 500;">MedAi Limited | 2021 – Present</p>
+                        <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 1.1rem; margin-top: 1rem;">
+                            <li>Developed <strong>AmarDoctor</strong>, an AI-powered multilingual telemedicine platform.</li>
+                            <li>Engineered the <strong>Symptom Checker</strong> & Clinical Decision Support System.</li>
+                            <li>Architected scalable <strong>AWS cloud infrastructure</strong> and TypeDB knowledge graphs.</li>
+                            <li>Led backend engineering using Django REST Framework and API-first architecture.</li>
+                        </ul>
                     </div>
                 </div>
-                
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <h3>Instructor</h3>
+                        <p style="color: var(--accent); font-weight: 500;">Bangladesh Institute of Science & Technology | 2019 – 2020</p>
+                        <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 1.1rem; margin-top: 1rem;">
+                             <li>CS520223 Microprocessors and Assembly (theory and lab).</li>
+                             <li>CS540206 Computer Graphics (lab).</li>
+                             <li>CS540219 Network and Information Security (theory).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <h3>AmarDoctor – Digital Health Platform</h3>
+                     <p style="font-size: 13pt"><strong>Problem:</strong> Lack of AI-driven primary care access for Bengali speakers, engendering healthcare accessibility barriers for South Asian populations.</p>
+                    <p style="font-size: 13pt"><strong>Solution:</strong> Designed and developed the AmarDoctor platform, featuring a colloquial-language symptom checker and a clinical decision support system that streamlines consultations and reduces physician burnout.</p>
+                    <p style="font-size: 13pt"><strong>Impact:</strong> A first-of-its-kind AI-powered platform that has served over 12,000 Bengali-speaking users, delivering more than 4000 personalized healthcare consultations as of now.</p>
+                    <p style="font-size: 13pt"><strong>Award: </strong>AmarDoctor was selected as a Solver Team in the 2024 <a href="https://solve.mit.edu/solutions/86473" style="color: var(--accent); font-weight: 500;">MIT Solve Global Health Equity Challenge</a> for its AI-powered, culturally inclusive telemedicine platform serving Bengali-speaking communities. The award recognizes its impact in advancing equitable access to primary care.</p>
+                    
+                    <div class="btn-group">
+                        <a href="https://amardoctor.health" class="btn"><i class="fas fa-globe"></i> Website</a>
+                        <a href="images/AmarDoctor_extended_case_study.pdf" class="btn"><i class="fas fa-file-pdf"></i> Case Study</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Medical Recrods Digitization Pipeline</h3>
+                    <p style="font-size: 13pt"><strong>Problem:</strong> Paper-based records block access to patients’ long-term medical history at the point of care.</p>
+                    <p style="font-size: 13pt"><strong>Solution:</strong> LLM-powered OCR system for automated clinical data extraction.</p>
+                    <p style="font-size: 13pt"><strong>Impact:</strong> Improves patient safety and treatment accuracy through timely access to historical clinical data.</p>
+                    <br>
+                  
+                      <div class="btn-group">
+                        <a href="images/digitization.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>AI Symptom Checker & CDSS</h3>
+                    <p style="font-size: 13pt"><strong>Problem:</strong> Many patients face difficulty articulating their symptoms and identifying the right specialist.</p>
+                    <p style="font-size: 13pt"><strong>Solution:</strong> Designed a symptom checker that suggests relevant symp3oms, asks targeted follow-up questions, and provides provisional diagnoses along with specialist recommendations.</p>
+                    <p style="font-size: 13pt"><strong>Impact:</strong> Achieved <strong>81%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
+                    <br>
+                   <p style="font-size: 13pt"><img src = "images/symptom_checker.png" style="width: 100%; height:350px; max-width: 100%;"></p>
+                      <div class="btn-group">
+                        <a href="images/Symptom_Checker.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                <h3>Medical History-Driven Dietary Recommendation System</h3>
+                <p><strong>Problem:</strong> Gap between visual food recognition technology and personalized medical dietary counseling for chronic disease management.</p>
+                                    <p style="font-size: 13pt"><strong>Solution:</strong>  Integrated computer vision-based food classification with medical knowledge systems for condition-specific dietary filtering and recommendation generation.</p>
+                                    <p style="font-size: 13pt"><strong>Impact:</strong> Enables real-time food guidance automation, potentially improving patient adherence to medical dietary restrictions to manage chronic conditions.</p>
+                                    <br>
+                                    <p style="font-size: 13pt"><img src = "images/food.png" style="width: 100%; height:340px; max-width: 100%;"></p>
+                                   
+                                    <div class="btn-group">
+                                        <a href="images/Food_Guidance.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
+                                    </div>
+                </div>
+
+
+               <div class="card">
+                 <h3>Medical Assistant Chatbot → LLM-Powered Conversational Interface</h3>
+                <p style="font-size: 13pt"><strong>Problem:</strong>Users need to describe symptoms and access care without navigating complex interfaces</p>
+                <p style="font-size: 13pt"><strong>Solution:</strong>Started as a RASA-based intent classifier for mental vs. physical health triage; evolved into an LLM-powered assistant that serves as AmarDoctor’s primary entry point, handling symptom assessment, appointment booking, and care navigation in natural dialogue.</p>
+                <p style="font-size: 13pt"><strong>User Experience: </strong>Natural dialogue-based interface adapting to user abilities and communication styles.</p>
+                 <p style="font-size: 13pt"><img src = "images/ss.png" style="width: 80%; height:500px; max-width: 100%;"></p>
+                <br>
+                <div class="btn-group">
+                    <a href="https://github.com/OceanRahan/medical-assistant-chatbot" class="btn"><i class="fab fa-github"></i> GitHub</a> 
+                </div>                    
+                </div>
+
+                <div class="card">
+                    <h3>Bengali OCR Using Deep Learning</h3>
+                    <p>Developed a novel word image dataset and trained deep neural networks (CNN, RNN, LSTM) to digitize printed Bengali literature.</p>
+                    <div class="tag-row">
+                        <span class="tag">Tensorflow</span><span class="tag">Keras</span><span class="tag">OpenCV</span>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://www.kaggle.com/datasets/oceanrahan/final-train" class="btn"><i class="fas fa-database"></i> Dataset</a>
+                    </div>
+                </div>
+
                 <div class="card">
                     <h3>SaaS Client Management System</h3>
-                    <p style="font-size: 14pt"><strong>Problem:</strong> Managing scalable, secure API access for healthcare service providers.</p>
-                    <p style="font-size: 14pt"><strong>Solution:</strong> Built a JWT-authenticated client management platform with customizable service packages and time-based access control.</p>
-                    <p style="font-size: 14pt"><strong>Impact:</strong> Powers scalable B2B healthcare API delivery with robust access and subscription management.</p>
-                    <p style="font-size: 14pt"><b>Tech Stack</b>: Django REST API, PostgreSQL, AWS, JWT Authentication, SaaS Architecture
-                    <p>
+                    <p>Built a JWT-authenticated platform with PostgreSQL and AWS for managing secure healthcare API access and subscription tiers.</p>
+                    <div class="tag-row">
+                        <span class="tag">Django REST API</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">JWT Authentiation</span>
+                    </div>
                 </div>
-</section>
+            </div>
+        </section>
 
+       
 
-
-<footer class="footer section">
-  <div class="footer-content">
-    <h2>Technical Repositories & Insights</h2>
-    <p>Explore my latest research, code implementations, and technical articles across the community platforms below.</p>
-    
-    <div class="footer-socials">
-      <a href="https://github.com/OceanRahan" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.kaggle.com/oceanrahan" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a>
-      <a href="https://huggingface.co/oceanrahan" target="_blank" title="Huggingface"><i class="fas fa-robot"></i></a>
-      <a href="https://medium.com/@oceanrahan" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
- 
-      
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 NAZMUN NAHAR</p>
-    </div>
-  </div>
-
-</footer>
-
-  <div style="width: 250px; height: 250px; margin: 20px auto; overflow: hidden; border-radius: 10px;">
+        <footer class="footer">
+            <h2>Technical Repositories</h2>
+            <div class="footer-socials">
+                <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/oceanrahan"><i class="fab fa-kaggle"></i></a>
+                <a href="https://huggingface.co/oceanrahan"><i class="fas fa-robot"></i></a>
+                <a href="https://medium.com/@oceanrahan"><i class="fab fa-medium"></i></a>
+            </div>
+            <p style="opacity: 0.5; font-size: 0.9rem;">&copy; 2026 NAZMUN NAHAR | BUILT FOR IMPACT</p>
+        </footer>
+        <div style="width: 250px; height: 250px; margin: 20px auto; overflow: hidden; border-radius: 10px;">
     <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=KXkixfxWFTff9OPJwmnObEKPc0ffrs2k2uY3tM1UViE&cl=ffffff&w=a"></script>
 </div>
-</main>
-
+    </main>
 </div>
-<script>
-  const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")});
-  },{threshold:.15});
-  document.querySelectorAll(".section,.card").forEach(el=>obs.observe(el));
-</script>
-
 
 <script>
-
-  // 1. Fix "Back Button" Invisible Page Cache
-window.addEventListener("pageshow", function(event) {
-    // Removes the 'exit' class if the page is loaded from browser cache (back button)
-    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-        document.body.classList.remove("page-exit");
-        document.body.style.opacity = "1";
-    }
-});
-
-// 2. Optimized Page Transitions
-document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
-    
-    links.forEach(link => {
-        link.addEventListener("click", e => {
-            const destination = link.href;
-            
-            // Prevent transition if it's the same page
-            if (destination === window.location.href) return;
-
-            e.preventDefault();
-            document.body.classList.add("page-exit");
-
-            // Navigate after the transition finishes
-            setTimeout(() => {
-                window.location.href = destination;
-            }, 400); 
+    // Smooth Reveal Animation on Scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
         });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(el => observer.observe(el));
+
+    // Handle Page Transitions for Interests Hub
+    document.querySelectorAll('a').forEach(link => {
+        if (link.href.includes('test.html')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('page-exit');
+                setTimeout(() => window.location.href = link.href, 500);
+            });
+        }
     });
-});
-
-// 3. Scroll Restoration
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'auto'; // Ensures back button returns to previous scroll spot
-}
 </script>
-
-
 </body>
 </html>
