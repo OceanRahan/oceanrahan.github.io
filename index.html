@@ -395,5 +395,45 @@
         }
     });
 </script>
+
+<script>
+
+  // 1. Fix "Back Button" Invisible Page Cache
+window.addEventListener("pageshow", function(event) {
+    // Removes the 'exit' class if the page is loaded from browser cache (back button)
+    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        document.body.classList.remove("page-exit");
+        document.body.style.opacity = "1";
+    }
+});
+
+// 2. Optimized Page Transitions
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+    
+    links.forEach(link => {
+        link.addEventListener("click", e => {
+            const destination = link.href;
+            
+            // Prevent transition if it's the same page
+            if (destination === window.location.href) return;
+
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+
+            // Navigate after the transition finishes
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 400); 
+        });
+    });
+});
+
+// 3. Scroll Restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'auto'; // Ensures back button returns to previous scroll spot
+}
+</script>
+
 </body>
 </html>
