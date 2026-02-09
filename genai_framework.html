@@ -787,10 +787,12 @@
 
 
 <script>
-    // 1. Optimized Page Transition Trigger
+    // 1. Optimized Page Transitions
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', e => {
             const href = link.getAttribute('href');
+            
+            // Don't break external links, same-page anchors, or blank targets
             if (!href || href.startsWith('#') || link.target === '_blank') return;
 
             e.preventDefault();
@@ -798,18 +800,29 @@
 
             setTimeout(() => {
                 window.location.href = href;
-            }, 500); 
+            }, 400); // Matches the index.html transition speed
         });
     });
 
-    // 2. BFCACHE FIX: Reset state when navigating back
+    /**
+     * BFCACHE RESET (The fix for GitHub Pages)
+     * This listener runs every time the page is displayed.
+     */
     window.addEventListener("pageshow", function(event) {
-        // event.persisted is true if the page was loaded from the cache
+        // If the page is loaded from the browser cache (back button)
         if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            // Force-remove the exit class immediately
             document.body.classList.remove("page-exit");
-            // Force a slight reflow and ensure visibility
+            
+            // Reset opacity and visibility styles manually to override any stuck CSS
             document.body.style.opacity = "1";
             document.body.style.visibility = "visible";
+            
+            // If you have a specific video/overlay that is stuck, reset it here:
+            const mainVideo = document.getElementById('feature-video');
+            if (mainVideo) {
+                mainVideo.style.opacity = "1";
+            }
         }
     });
 </script>
