@@ -20,7 +20,23 @@
             color: var(--text-main);
             margin: 0;
             line-height: 1.6;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
+
+        body.page-exit {
+        opacity: 0;
+        pointer-events: none; /* Prevents clicking anything while fading out */
+      }
+
+        /* If you have a specific overlay or image appearing, ensure it resets */
+        .project-overlay, #feature-video {
+            z-index: 1; 
+       }
+
+      body.page-exit .project-overlay {
+      z-index: 9999; /* Only jumps to foreground during exit */
+      }
 
         .site-footer {
           text-align: center;
@@ -771,34 +787,31 @@
 
 
 <script>
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        
-        // Don't break external links or anchor tags
-        if (!href || href.startsWith('#') || link.target === '_blank') return;
+    // 1. Optimized Page Transition Trigger
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || link.target === '_blank') return;
 
-        e.preventDefault();
-        document.body.classList.add('page-exit');
+            e.preventDefault();
+            document.body.classList.add('page-exit');
 
-        setTimeout(() => {
-            window.location.href = href;
-        }, 500); // Matches your 0.5s CSS transition
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); 
+        });
     });
-});
-</script>
 
-<script>
-  // Fix for GitHub Pages / Browser Back Button cache
-  window.addEventListener("pageshow", function(event) {
-    // If the page is loaded from the cache (like when clicking 'Back')
-    if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-        // Remove the exit class that hides the content
-        document.body.classList.remove("page-exit");
-        // Ensure opacity is restored
-        document.body.style.opacity = "1";
-    }
-  });
+    // 2. BFCACHE FIX: Reset state when navigating back
+    window.addEventListener("pageshow", function(event) {
+        // event.persisted is true if the page was loaded from the cache
+        if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            document.body.classList.remove("page-exit");
+            // Force a slight reflow and ensure visibility
+            document.body.style.opacity = "1";
+            document.body.style.visibility = "visible";
+        }
+    });
 </script>
 
 </body>
