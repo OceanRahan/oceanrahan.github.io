@@ -75,7 +75,7 @@
         .links a:hover { color: white; background: rgba(255, 255, 255, 0.05); transform: translateX(5px); }
 
         /* --- CONTENT AREA --- */
-        .content { margin-left: 350px; flex: 1; padding: 0 8%; }
+        .content { margin-left: 350px; flex: 1; padding: 0 5%; }
 
         .top-nav {
             position: sticky;
@@ -146,11 +146,91 @@
         /* --- ANIMATIONS --- */
         .page-exit { opacity: 0; transition: 0.5s; }
 
+        /* --- HAMBURGER BUTTON --- */
+        .hamburger {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            backdrop-filter: blur(12px);
+            transition: background 0.3s;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-main);
+            border-radius: 2px;
+            transition: transform 0.35s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* --- MOBILE DRAWER --- */
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 0; right: 0;
+            width: 260px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.97);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border);
+            z-index: 9998;
+            flex-direction: column;
+            padding: 5rem 2rem 2rem;
+            gap: 0.5rem;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.open { transform: translateX(0); }
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .mobile-drawer a:hover,
+        .mobile-drawer a:active { color: white; background: rgba(3,166,161,0.12); }
+
+        .drawer-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9997;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .drawer-backdrop.open { opacity: 1; }
+
         @media (max-width: 1100px) {
             .layout { flex-direction: column; }
             .sidebar { width: 100%; height: auto; position: relative; border-right: none; padding: 2rem; }
             .content { margin-left: 0; }
             .top-nav { display: none; }
+            .hamburger { display: flex; }
+            .mobile-drawer { display: flex; }
+            .drawer-backdrop { display: block; }
+            .content { margin-left: 0; padding: 0 4%; }
         }
     </style>
 </head>
@@ -302,7 +382,7 @@
                     <p style="font-size: 13pt"><strong>Solution:</strong> Designed a symptom checker that suggests relevant symp3oms, asks targeted follow-up questions, and provides provisional diagnoses along with specialist recommendations.</p>
                     <p style="font-size: 13pt"><strong>Impact:</strong> Achieved <strong>81%</strong> diagnostic accuracy validated against physician assessments using <strong>185</strong> simulated patient cases, significantly improving triage efficiency and accessibility to care.</p>
                     <br>
-                   <p style="font-size: 13pt"><img src = "images/symptom_checker.png" style="width: 100%; height:350px; max-width: 100%;"></p>
+                   <p style="font-size: 13pt"><img src = "images/symptom_checker.png" style="width: 100%; height:320px; max-width: 100%;"></p>
                       <div class="btn-group">
                         <a href="images/Symptom_Checker.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
                     </div>
@@ -314,7 +394,7 @@
                                     <p style="font-size: 13pt"><strong>Solution:</strong>  Integrated computer vision-based food classification with medical knowledge systems for condition-specific dietary filtering and recommendation generation.</p>
                                     <p style="font-size: 13pt"><strong>Impact:</strong> Enables real-time food guidance automation, potentially improving patient adherence to medical dietary restrictions to manage chronic conditions.</p>
                                     <br>
-                                    <p style="font-size: 13pt"><img src = "images/food.png" style="width: 100%; height:340px; max-width: 100%;"></p>
+                                    <p style="font-size: 13pt"><img src = "images/food.png" style="width: 100%; height:320px; max-width: 100%;"></p>
                                    
                                     <div class="btn-group">
                                         <a href="images/Food_Guidance.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
@@ -434,6 +514,61 @@ document.addEventListener("DOMContentLoaded", () => {
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'auto'; // Ensures back button returns to previous scroll spot
 }
+</script>
+
+
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+</button>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<nav class="mobile-drawer" id="mobileDrawer">
+    <a href="#about"      onclick="closeDrawer()"><i class="fas fa-user"></i> About</a>
+    <a href="#preprints"  onclick="closeDrawer()"><i class="fas fa-file-alt"></i> Preprints</a>
+    <a href="#experience" onclick="closeDrawer()"><i class="fas fa-briefcase"></i> Experience</a>
+    <a href="#projects"   onclick="closeDrawer()"><i class="fas fa-code"></i> Projects</a>
+    <a href="portfolio.html" id="mobilePortfolioLink"><i class="fas fa-images"></i> Portfolio</a>
+    <a href="other.html"  style="color: var(--accent);"><i class="fas fa-star"></i> Personal Interests</a>
+</nav>
+
+
+<script>
+(function() {
+    var btn      = document.getElementById('hamburger');
+    var drawer   = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('drawerBackdrop');
+
+    function openDrawer() {
+        btn.classList.add('open');
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    window.closeDrawer = function() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
+    btn.addEventListener('click', function() {
+        if (drawer.classList.contains('open')) { closeDrawer(); }
+        else { openDrawer(); }
+    });
+
+    backdrop.addEventListener('click', closeDrawer);
+
+    document.getElementById('mobilePortfolioLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        closeDrawer();
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = 'portfolio.html'; }, 500);
+    });
+})();
 </script>
 
 </body>
