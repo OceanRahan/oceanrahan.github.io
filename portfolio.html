@@ -225,44 +225,81 @@ body.zooming {
 
 
 <script>
-function smoothNavigate(card, url) {
-  // Clone the card
-  const clone = card.cloneNode(true);
-  const rect = card.getBoundingClientRect();
+  // Track the active clone so we can always find and remove it
+  let activeClone = null;
 
-  // Style clone for animation
-  clone.style.position = "fixed";
-  clone.style.top = rect.top + "px";
-  clone.style.left = rect.left + "px";
-  clone.style.width = rect.width + "px";
-  clone.style.height = rect.height + "px";
-  clone.style.margin = 0;
-  clone.style.zIndex = 9999;
-  clone.style.transition = "all 0.7s cubic-bezier(.2,.8,.2,1)";
-  clone.style.borderRadius = "20px";
+  function smoothNavigate(card, url) {
+    // Prevent double-clicks triggering the animation twice
+    if (activeClone) return;
 
-  document.body.appendChild(clone);
+    const clone = card.cloneNode(true);
+    const rect = card.getBoundingClientRect();
 
-  // Force reflow
-  clone.getBoundingClientRect();
+    // Position the clone exactly over the original card
+    clone.style.cssText = [
+      "position: fixed",
+      "top: " + rect.top + "px",
+      "left: " + rect.left + "px",
+      "width: " + rect.width + "px",
+      "height: " + rect.height + "px",
+      "margin: 0",
+      "z-index: 9999",
+      "border-radius: 16px",
+      "pointer-events: none",
+      "transition: all 0.65s cubic-bezier(.2,.8,.2,1)"
+    ].join(";");
 
-  // Animate to fullscreen
-  clone.style.top = 0;
-  clone.style.left = 0;
-  clone.style.width = "90vw";
-  clone.style.height = "90vh";
-  clone.style.borderRadius = "0";
+    document.body.appendChild(clone);
+    activeClone = clone;
 
-  // Fade background
-  document.body.classList.add("page-exit");
+    // Force reflow so the starting position is painted before animating
+    clone.getBoundingClientRect();
 
-  // Navigate after animation
-  setTimeout(() => {
-    window.location.href = url;
-  }, 500);
-  
-}
+    // Animate the clone to fill the full viewport
+    clone.style.top = "0";
+    clone.style.left = "0";
+    clone.style.width = "100vw";
+    clone.style.height = "100vh";
+    clone.style.borderRadius = "0";
+
+    // Fade the rest of the page out
+    document.body.classList.add("page-exit");
+
+    // Remove the clone BEFORE navigating so bfcache never stores it
+    setTimeout(function() {
+      if (activeClone) {
+        activeClone.remove();
+        activeClone = null;
+      }
+      window.location.href = url;
+    }, 650);
+  }
+
+  /**
+   * BFCACHE RESET
+   * Fires every time this page becomes visible — including when the
+   * user hits the Back button and the browser restores from cache.
+   */
+  window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+      // Remove any clone captured in the cache snapshot
+      if (activeClone) {
+        activeClone.remove();
+        activeClone = null;
+      }
+      // Belt-and-suspenders: sweep for orphaned fixed clones
+      document.querySelectorAll(".project-card").forEach(function(el) {
+        if (el.style.position === "fixed") el.remove();
+      });
+
+      // Restore page to its normal visible state
+      document.body.classList.remove("page-exit");
+      document.body.style.opacity = "1";
+      document.body.style.visibility = "visible";
+    }
+  });
 </script>
+
 
 
 </body>
