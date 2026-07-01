@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Beyond Research | Nazmun Nahar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<style>
+    .interest-section { margin-bottom: 3.5rem; padding-bottom: 3.2rem; border-bottom: 1px solid var(--rule); }
+    .interest-section:last-child { border-bottom: none; }
+    .interest-section h3.block-title { margin-bottom: 0.9rem; border-bottom: none; padding-bottom: 0; }
+    .interest-section > p.lead { color: var(--ink-dim); font-size: 1rem; margin-bottom: 1.4rem; max-width: 640px; }
+
+    .mini-gallery { columns: 2 220px; column-gap: 1rem; margin-top: 1.2rem; }
+    .mini-gallery .gwrap { break-inside: avoid; margin-bottom: 1rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
+    .mini-gallery img { width: 100%; display: block; transition: transform 0.5s ease, filter 0.4s ease; filter: saturate(0.96); }
+    .mini-gallery .gwrap:hover img { transform: scale(1.06); }
+
+    .cat-profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-bottom: 1.2rem; }
+    .cat-profiles h4 { font-size: 1.1rem; color: var(--accent); margin-bottom: 0.3rem; }
+    .cat-profiles span.tagline { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 0.3rem; }
+    .cat-profiles p { font-size: 0.92rem; color: var(--ink-dim); }
+
+    .book-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.6rem; }
+    .book-item { background: var(--accent-soft); border: 1px solid var(--accent-line); padding: 0.9rem 1.1rem; border-radius: 8px; font-size: 0.9rem; }
+    .book-item strong { display: block; color: var(--ink); font-size: 1rem; margin-bottom: 0.15rem; }
+
+    .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1rem; }
+    .spotlight-card { border: 1px solid var(--rule); padding: 1.4rem; border-radius: 10px; }
+    .spotlight-card h4 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .spotlight-card p { font-size: 0.9rem; color: var(--ink-dim); }
+
+    @media (max-width: 640px) { .cat-profiles, .book-list, .spotlight-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">Nazmun Nahar</a>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="beyond-research.html" class="active">Beyond Research</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="beyond-research.html" class="active">Beyond Research</a>
+</nav>
+
+<div class="page-shell">
+    <aside class="bio-sidebar">
+        <img src="images/ocn2.jpg" class="bio-photo" alt="Nazmun Nahar">
+        <h1>Nazmun Nahar</h1>
+        <p class="role">M.S. Student, Computer Science<br>University of Minnesota Duluth</p>
+        <div class="bio-links">
+            <a href="images/Nazmun_Nahar.pdf"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
+            <a href="https://scholar.google.com/citations?user=oxADXwQAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="mailto:oceanrahan@gmail.com"><i class="fas fa-envelope"></i> oceanrahan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/nazmun-nahar-81670b149"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://orcid.org/0009-0003-3708-9029"><i class="fab fa-orcid"></i> ORCID</a>
+            <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <p class="bio-affiliation">C4SG Lab<br>Advised by <a href="https://momen-bhuiyan.appspot.com/" style="color:var(--accent);">Dr. Momen Bhuiyan</a></p>
+    </aside>
+
+    <main class="content-area">
+        <h2 class="page-title">Beyond Research</h2>
+        <p class="page-intro">A few of the creative and reflective pursuits that shape how I think about storytelling, emotion, and the human experience.</p>
+
+        <section class="interest-section">
+            <span class="eyebrow">Feline Companions</span>
+            <h3 class="block-title">Lochon &amp; Floria</h3>
+            <p class="lead">My lifelong affection for cats began in early childhood. What started as a mouser brought home by my father blossomed into a profound empathy and connection that has stayed with me through every stage of life.</p>
+
+            <div class="cat-profiles">
+                <div>
+                    <span class="tagline">The Older Daughter</span>
+                    <h4>Lochon</h4>
+                    <p>At four years old, Lochon is the vocal heartbeat of the house. Though often anxious and paranoid, she expresses her energy through endless dashes around the home.</p>
+                </div>
+                <div>
+                    <span class="tagline">The Younger Daughter</span>
+                    <h4>Floria</h4>
+                    <p>At two years old, Floria is the perfect contrast — quiet, relaxed, and a lover of sleep. While she occasionally joins the chase, she represents the calm in the household.</p>
+                </div>
+            </div>
+
+            <div class="mini-gallery">
+                <div class="gwrap"><img src="images/lochon1.jpg" alt="Lochon portrait"></div>
+                <div class="gwrap"><img src="images/floria1.jpg" alt="Floria relaxing"></div>
+                <div class="gwrap"><img src="images/lochon3.jpg" alt="Lochon playing"></div>
+                <div class="gwrap"><img src="images/floria3.jpg" alt="Floria staring"></div>
+                <div class="gwrap"><img src="images/cat1.jpg" alt="Both cats"></div>
+                <div class="gwrap"><img src="images/lochon_floria1.jpg" alt="Both cats"></div>
+            </div>
+        </section>
+
+        <section class="interest-section">
+            <span class="eyebrow">Photography</span>
+            <h3 class="block-title">Capturing Fleeting Beauty</h3>
+            <p class="lead">Photography is a tool to seize fleeting beauty and encapsulate significant moments. I find particular joy in framing the intricate artistry of the natural world. More of my work is on <a href="https://unsplash.com/@oceanrahan" target="_blank">Unsplash</a>.</p>
+
+            <div class="mini-gallery">
+                <div class="gwrap"><img src="images/sunset.jpg" alt="Nature photography"></div>
+                <div class="gwrap"><img src="images/rain.jpg" alt="Nature photography"></div>
+                <div class="gwrap"><img src="images/vibe.jpg" alt="Nature photography"></div>
+                <div class="gwrap"><img src="images/statue.jpg" alt="Art photography"></div>
+                <div class="gwrap"><img src="images/tea.jpg" alt="Tea photography"></div>
+            </div>
+        </section>
+
+        <section class="interest-section">
+            <span class="eyebrow">Reading</span>
+            <h3 class="block-title">From Fairy Tales to Bengali Classics</h3>
+            <p class="lead">When I was very young, I loved fairy tales — they felt like magical doors to amazing places. Though I have grown, the bright covers in a bookstore still evoke that old magic. In my teens, I immersed myself in the works of Bengali masters, often finishing novels in just a couple of days.</p>
+
+            <div class="book-list">
+                <div class="book-item"><strong>Pather Panchali</strong>Bibhutibhushan Bandyopadhyay</div>
+                <div class="book-item"><strong>Pather Dabi</strong>Sarat Chandra Chattopadhyay</div>
+                <div class="book-item"><strong>Golpo Guccho</strong>Rabindranath Tagore</div>
+            </div>
+        </section>
+
+        <section class="interest-section">
+            <span class="eyebrow">Dramatic Art</span>
+            <h3 class="block-title">Live Theatre</h3>
+            <p class="lead" style="font-style: italic;">"I find immense pleasure in attending theatre plays. They offer a refreshing escape from everyday life, allowing me to immerse myself in worlds distinct from the scientific realm I often inhabit."</p>
+
+            <div class="spotlight-grid">
+                <div class="spotlight-card">
+                    <h4>Company</h4>
+                    <p>A powerful portrayal of British colonial exploitation and the historical fall of Siraj Ud-Doula.</p>
+                </div>
+                <div class="spotlight-card">
+                    <h4>Chitrangada</h4>
+                    <p>An intimate production with a circular stage that placed the performers directly among the audience.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-socials">
+        <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i></a>
+        <a href="https://www.kaggle.com/oceanrahan"><i class="fab fa-kaggle"></i></a>
+        <a href="https://huggingface.co/oceanrahan"><i class="fas fa-robot"></i></a>
+        <a href="https://medium.com/@oceanrahan"><i class="fab fa-medium"></i></a>
+    </div>
+    <p>&copy; 2026 Nazmun Nahar</p>
+</footer>
+
+<script>
+(function() {
+    var btn = document.getElementById('hamburger');
+    var drawer = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('drawerBackdrop');
+    function close() { btn.classList.remove('open'); drawer.classList.remove('open'); backdrop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    function openD() { btn.classList.add('open'); drawer.classList.add('open'); backdrop.classList.add('open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    btn.addEventListener('click', function(){ drawer.classList.contains('open') ? close() : openD(); });
+    backdrop.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Publications | Nazmun Nahar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">Nazmun Nahar</a>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="beyond-research.html">Beyond Research</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="publications.html" class="active">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="beyond-research.html">Beyond Research</a>
+</nav>
+
+<div class="page-shell">
+    <aside class="bio-sidebar">
+        <img src="images/ocn2.jpg" class="bio-photo" alt="Nazmun Nahar">
+        <h1>Nazmun Nahar</h1>
+        <p class="role">M.S. Student, Computer Science<br>University of Minnesota Duluth</p>
+        <div class="bio-links">
+            <a href="images/Nazmun_Nahar.pdf"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
+            <a href="https://scholar.google.com/citations?user=oxADXwQAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="mailto:oceanrahan@gmail.com"><i class="fas fa-envelope"></i> oceanrahan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/nazmun-nahar-81670b149"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://orcid.org/0009-0003-3708-9029"><i class="fab fa-orcid"></i> ORCID</a>
+            <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <p class="bio-affiliation">C4SG Lab<br>Advised by <a href="https://momen-bhuiyan.appspot.com/" style="color:var(--accent);">Dr. Momen Bhuiyan</a></p>
+    </aside>
+
+    <main class="content-area">
+        <h2 class="page-title">Publications</h2>
+        <p class="page-intro">Preprints and peer-reviewed work in digital health, AI systems, and human-centered computing.</p>
+
+        <ul class="pub-list">
+            <li class="pub-item">
+                <span class="pub-status">Accepted &middot; AIHealth</span> (unpublished)
+                <h4>Healing Through Generative Vision: A Multimodal AI Framework</h4>
+                <p class="pub-authors">Nazmun Nahar</p>
+                <p class="pub-venue">Generative AI for Trauma-Informed Care &middot; 2026</p>
+                <div class="pub-links">
+                    <a href="https://www.researchgate.net/publication/399769670" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <span class="pub-status">arXiv:2510.24724</span>
+                <h4>An AI-Driven, Multilingual, Voice-Interactive Digital Health Application for Primary Care Triage and Patient Management to Bridge the Digital Health Divide for Bengali Speakers</h4>
+                <p class="pub-authors">Nazmun Nahar et al.</p>
+                <p class="pub-venue">arXiv preprint &middot; 2025</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2510.24724" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <span class="pub-status">arXiv:2406.12931</span>
+                <h4>Automatic Speech Recognition of Biomedical Data in Bengali Language</h4>
+                <p class="pub-authors">Shariar Kabir, Nazmun Nahar, et al.</p>
+                <p class="pub-venue">arXiv preprint &middot; 2024</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2406.12931" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-socials">
+        <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i></a>
+        <a href="https://www.kaggle.com/oceanrahan"><i class="fab fa-kaggle"></i></a>
+        <a href="https://huggingface.co/oceanrahan"><i class="fas fa-robot"></i></a>
+        <a href="https://medium.com/@oceanrahan"><i class="fab fa-medium"></i></a>
+    </div>
+    <p>&copy; 2026 Nazmun Nahar</p>
+</footer>
+
+<script>
+(function() {
+    var btn = document.getElementById('hamburger');
+    var drawer = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('drawerBackdrop');
+    function close() { btn.classList.remove('open'); drawer.classList.remove('open'); backdrop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    function openD() { btn.classList.add('open'); drawer.classList.add('open'); backdrop.classList.add('open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    btn.addEventListener('click', function(){ drawer.classList.contains('open') ? close() : openD(); });
+    backdrop.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+</script>
+</body>
+</html>

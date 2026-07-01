@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nazmun Nahar | HCI &amp; Social Computing</title>
+<title>CV | Nazmun Nahar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,9 @@
 <header class="site-header">
     <a href="index.html" class="brand">Nazmun Nahar</a>
     <nav class="site-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="publications.html">Publications</a>
-        <a href="cv.html">CV</a>
+        <a href="cv.html" class="active">CV</a>
         <a href="teaching.html">Teaching</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="beyond-research.html">Beyond Research</a>
@@ -26,9 +26,9 @@
 </header>
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
 <nav class="mobile-drawer" id="mobileDrawer">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="publications.html">Publications</a>
-    <a href="cv.html">CV</a>
+    <a href="cv.html" class="active">CV</a>
     <a href="teaching.html">Teaching</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="beyond-research.html">Beyond Research</a>
@@ -51,57 +51,78 @@
     </aside>
 
     <main class="content-area">
-        <h2 class="page-title">About</h2>
-        <p class="page-intro">Human–Computer Interaction · Social Computing · Applied AI</p>
+        <h2 class="page-title">Curriculum Vitae</h2>
+        <p class="page-intro">A summary of my education, experience, and technical background.
+            <a href="images/Nazmun_Nahar.pdf" class="btn" style="margin-left: 0.6rem;"><i class="fas fa-download"></i> Download Full CV</a>
+        </p>
 
         <section class="block">
-            <p style="font-size: 1.08rem; margin-bottom: 1.3rem;">I am an incoming Master's student in Computer Science at the University of Minnesota Duluth, starting in Fall 2026. My research interests are in Human–Computer Interaction (HCI) and Social Computing. I am a member of the C4SG Lab, where I work under the supervision of <a href="https://momen-bhuiyan.appspot.com/">Dr. Momen Bhuiyan</a>.</p>
-
-            <p style="font-size: 1.02rem; color: var(--ink-dim); margin-bottom: 1.3rem;">I earned my Bachelor's degree in Computer Science and Engineering from Bangladesh University of Engineering and Technology (BUET). For my thesis, I worked under the supervision of Professor <a href="https://cse.buet.ac.bd/faculty_list/detail/mdmonirulislam">Dr. Md. Monirul Islam</a> on <a href="https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link">Bengali OCR Using Deep Learning</a>, where I built a dataset from printed Bengali documents and trained deep learning models using CNNs, RNNs, and LSTMs, achieving an accuracy of 87.3%.</p>
-
-            <p style="font-size: 1.02rem; color: var(--ink-dim); margin-bottom: 1.6rem;">My current thesis work analyzes patterns of human attachment and detachment to large language models, comparing companion AI and task-oriented AI, using large-scale Reddit discourse as the primary data source.</p>
-
-            <div class="tag-row">
-                <span class="tag">Human-Computer Interaction</span>
-                <span class="tag">Adaptive and Mobile Interactive Systems</span>
-                <span class="tag">Multimodal Interfaces</span>
-                <span class="tag">Digital Health</span>
-                <span class="tag">Accessible Design</span>
-                <span class="tag">Applied AI</span>
+            <h3 class="block-title">Education</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>M.S. in Computer Science</h4>
+                    <p class="timeline-meta">University of Minnesota Duluth &middot; Fall 2026 –</p>
+                    <p>Research focus in Human–Computer Interaction and Social Computing, C4SG Lab. Advisor: Dr. Momen Bhuiyan. Graduate Teaching Assistant.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>B.Sc. in Computer Science and Engineering</h4>
+                    <p class="timeline-meta">Bangladesh University of Engineering and Technology (BUET)</p>
+                    <p>Thesis: <a href="https://drive.google.com/file/d/1OhOIkK4gkjl9Jw-PLS1U01nAGPYTawr4/view?usp=drive_link">Bengali OCR Using Deep Learning</a>, advised by Professor Dr. Md. Monirul Islam. Built a novel word-image dataset and trained CNN, RNN, and LSTM models, achieving 87.3% accuracy.</p>
+                </div>
             </div>
         </section>
 
         <section class="block">
-            <h3 class="block-title">News</h3>
+            <h3 class="block-title">Professional Experience</h3>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h4>Paper accepted at AIHealth</h4>
-                    <p class="timeline-meta">2026</p>
-                    <p>"Healing Through Generative Vision: A Multimodal AI Framework" accepted for publication.</p>
+                    <h4>Research &amp; Development Engineer</h4>
+                    <p class="timeline-meta">MedAi Limited &middot; 2021 – Present</p>
+                    <ul>
+                        <li>Developed AmarDoctor, an AI-powered multilingual telemedicine platform.</li>
+                        <li>Engineered the Symptom Checker and Clinical Decision Support System.</li>
+                        <li>Architected scalable AWS cloud infrastructure and TypeDB knowledge graphs.</li>
+                        <li>Led backend engineering using Django REST Framework and API-first architecture.</li>
+                    </ul>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <h4>Preprint released: AmarDoctor</h4>
-                    <p class="timeline-meta">2025</p>
-                    <p>"An AI-Driven, Multilingual, Voice-Interactive Digital Health Application for Primary Care Triage and Patient Management to Bridge the Digital Health Divide for Bengali Speakers" posted to arXiv.</p>
+                    <h4>Instructor</h4>
+                    <p class="timeline-meta">Bangladesh Institute of Science &amp; Technology &middot; 2019 – 2020</p>
+                    <p>Taught Microprocessors and Assembly, Computer Graphics, and Network and Information Security. Full course details on the <a href="teaching.html">Teaching</a> page.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <h3 class="block-title">Awards &amp; Recognition</h3>
+            <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <h4>Solver Team, MIT Solve Global Health Equity Challenge</h4>
                     <p class="timeline-meta">2024</p>
-                    <p>AmarDoctor was selected as a Solver Team for its AI-powered, culturally inclusive telemedicine platform serving Bengali-speaking communities.</p>
+                    <p>Recognized for AmarDoctor's AI-powered, culturally inclusive telemedicine platform serving Bengali-speaking communities, advancing equitable access to primary care.</p>
                 </div>
             </div>
         </section>
 
         <section class="block">
-            <h3 class="block-title">Selected Work</h3>
-            <p style="color: var(--ink-dim); margin-bottom: 1.5rem;">A look at recent research and applied projects — full write-ups are on the <a href="portfolio.html">Portfolio</a> page.</p>
-            <div class="tag-row" style="gap: 1rem;">
-                <a href="amardoctor.html" class="btn"><i class="fas fa-stethoscope"></i> AmarDoctor</a>
-                <a href="genai_framework.html" class="btn"><i class="fas fa-brain"></i> Therapeutic Computing</a>
-                <a href="publications.html" class="btn"><i class="fas fa-file-alt"></i> All Preprints</a>
+            <h3 class="block-title">Technical Skills</h3>
+            <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Django REST Framework</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">AWS</span>
+                <span class="tag">TypeDB</span>
+                <span class="tag">JWT Authentication</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Keras</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">NLP &amp; LLM Pipelines</span>
+                <span class="tag">Conversational AI</span>
             </div>
         </section>
     </main>
@@ -115,9 +136,6 @@
         <a href="https://medium.com/@oceanrahan"><i class="fab fa-medium"></i></a>
     </div>
     <p>&copy; 2026 Nazmun Nahar</p>
-<div style="width: 250px; height: 250px; margin: 20px auto; overflow: hidden; border-radius: 10px;">
-    <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=KXkixfxWFTff9OPJwmnObEKPc0ffrs2k2uY3tM1UViE&cl=ffffff&w=a"></script>
-</div>
 </footer>
 
 <script>
@@ -132,6 +150,5 @@
     drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
 })();
 </script>
-
 </body>
 </html>

@@ -1,306 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Nazmun Nahar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --header-bg: #0f172a;
-            --accent-teal: #00809D;
-            --glass-overlay: rgba(0, 0, 0, 0.4);
-        }
+<meta charset="UTF-8">
+<title>Portfolio | Nazmun Nahar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<style>
+    .portfolio-wrap { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .portfolio-header { max-width: 640px; margin-bottom: 3rem; }
 
-        body {
-            font-family: 'EB Garamond', Garamond, serif;
-            
-            background: #0f172a; 
-            margin: 0;
-            overflow-x: hidden;
-        }
+    /* Featured (large, animated, image-driven) */
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 2.2rem; margin-bottom: 4.5rem; }
+    .feature-card {
+        position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden;
+        cursor: pointer; text-decoration: none; box-shadow: 0 10px 30px rgba(20,30,28,0.12);
+        transition: transform 0.55s cubic-bezier(0.165,0.84,0.44,1), box-shadow 0.55s ease;
+    }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 22px 45px rgba(20,30,28,0.22); }
+    .feature-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s ease; }
+    .feature-card:hover img { transform: scale(1.08); }
+    .feature-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(15,20,18,0.88) 5%, rgba(15,20,18,0.25) 55%, transparent 90%);
+    }
+    .feature-content { position: absolute; left: 0; bottom: 0; width: 100%; padding: 2rem; color: #fff; }
+    .feature-content .eyebrow { color: #BFE3D9; }
+    .feature-content h3 { font-size: 1.7rem; color: #fff; margin: 0.4rem 0 0.5rem; }
+    .feature-content p { font-size: 0.97rem; color: rgba(255,255,255,0.88); max-width: 90%; }
+    .feature-card.placeholder { cursor: default; }
+    .feature-card.placeholder .feature-overlay { background: rgba(40,42,38,0.55); }
+    .feature-card.placeholder .feature-content { text-align: center; left: 50%; bottom: 50%; transform: translate(-50%, 50%); width: 80%; }
+    .feature-card.placeholder i { font-size: 2rem; opacity: 0.6; margin-bottom: 0.8rem; }
 
-        /* Navpane */
-        .portfolio-nav {
-            background: var(--header-bg);
-            padding: 1.2rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Secondary (mini project cards) */
+    .mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.6rem; }
+    .mini-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 1.8rem; transition: 0.3s; }
+    .mini-card:hover { border-color: var(--accent-line); box-shadow: 0 10px 24px rgba(20,30,28,0.08); transform: translateY(-3px); }
+    .mini-card h4 { font-size: 1.18rem; margin-bottom: 0.7rem; color: var(--accent); font-weight: 600; }
+    .mini-card p { font-size: 0.92rem; color: var(--ink-dim); margin-bottom: 0.5rem; }
+    .mini-card img { width: 100%; border-radius: 8px; margin: 0.8rem 0; display: block; }
 
-        .portfolio-nav a {
-            color: #E9E3DF;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* The Grid */
-        .portfolio-wrapper {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 20px;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        /* Image-Based Square Card */
-        .project-card {
-            position: relative;
-            /* Changed from 1/1 to 3/2 for rectangular shape */
-            aspect-ratio: 3 / 2; 
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        /* The Background Image */
-        
-        .card-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            object-position: center;
-            transition: transform 0.8s ease;
-            z-index: 1;
-        }
-
-        /* The Dark/Blur Overlay */
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0.2) 60%, transparent 100%);
-            z-index: 2;
-            transition: background 0.4s ease;
-        }
-
-        /* Card Text Content */
-        .card-content {
-            position: absolute;
-            z-index: 3;
-            padding: 25px;
-            color: white;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-       
-
-        /* Hover Interactions */
-        .project-card:hover {
-            transform: scale(1.02);
-        }
-
-        .project-card:hover .card-img {
-            transform: scale(1.1); /* Zoom the image slightly */
-        }
-
-        .project-card:hover .card-overlay {
-            background: linear-gradient(to top, rgba(0,128,157,0.7) 0%, rgba(0,0,0,0.4) 100%);
-        }
-
-        .project-card:hover .card-content {
-            transform: translateY(0);
-        }
-
-        /* Typography matching index.html style */
-        .card-tag {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #0ad1cb;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .project-card h2 {
-            font-size: 2.8rem;
-            margin: 0 0 15px 0;
-            line-height: 1.1;
-        }
-
-        .project-card p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            max-width: 90%;
-        }
-
-        /* The Zoom Effect Class (JS Trigger) */
-        .project-card.zooming {
-            transform: scale(3);
-            opacity: 0;
-            z-index: 9999;
-            transition: transform 0.8s ease-in, opacity 0.5s ease-in;
-            pointer-events: none;
-        }
-
-
-        @media (max-width: 600px) {
-            .project-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Zoom transition */
-body.zooming {
-  overflow: hidden;
-  background: #0f172a;
-}
-
-.project-card {
-  cursor: pointer;
-  transition: transform .4s ease, box-shadow .4s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(3,166,161,.4);
-}
-
-    </style>
+    body.zooming { overflow: hidden; }
+</style>
 </head>
 <body>
 
-    <nav class="portfolio-nav">
-        <a href="index.html"><i class="fas fa-chevron-left"></i> RETURN HOME</a>
-        <div style="color: #E9E3DF; letter-spacing: 1px;">© Nazmun Nahar | Portfolio</div>
+<header class="site-header">
+    <a href="index.html" class="brand">Nazmun Nahar</a>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="beyond-research.html">Beyond Research</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="beyond-research.html">Beyond Research</a>
+</nav>
 
-    <main class="portfolio-wrapper">
-        <div class="project-grid">
-            
-            <div class="project-card" onclick="smoothNavigate(this, 'amardoctor.html')">
-                <img src="images/p4.jpg" alt="AmarDoctor" class="card-img">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span class="card-tag">Healthcare Tech</span>
-                    <h2>AmarDoctor</h2>
-                    <p>AI-driven comprehensive digital healthcare platform</p>
-                </div>
+<main class="portfolio-wrap">
+    <div class="portfolio-header">
+        <h2 class="page-title" style="font-size: 2.1rem; margin-bottom: 0.6rem;">Portfolio</h2>
+        <p class="page-intro" style="margin-bottom: 0;">Applied AI and HCI projects spanning digital health, conversational systems, and trauma-informed computing.</p>
+    </div>
+
+    <div class="featured-grid">
+        <div class="feature-card" onclick="smoothNavigate(this, 'amardoctor.html')">
+            <img src="images/p4.jpg" alt="AmarDoctor">
+            <div class="feature-overlay"></div>
+            <div class="feature-content">
+                <span class="eyebrow">Healthcare Tech</span>
+                <h3>AmarDoctor</h3>
+                <p>AI-driven, multilingual digital healthcare platform serving 12,000+ Bengali-speaking users.</p>
             </div>
-
-            <div class="project-card" onclick="smoothNavigate(this, 'genai_framework.html')">
-                <img src="images/p7.jpg" alt="genAI" class="card-img">
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span class="card-tag">Mental Health & Tech</span>
-                    <h2>Therapeutic Computing</h2>
-                    <p>AI-assisted visualization framework for trauma-informed therapy</p>
-                </div>
-            </div>
-
-            <div class="project-card" style="cursor: default;">
-                <img src="images/next.jpg" alt="genAI" class="card-img">
-                <div class="card-overlay" style="background: rgba(87, 86, 79, 0.6);"></div>
-                <div class="card-content" style="text-align: center; transform: none;">
-                    <i class="fas fa-plus-circle" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;"></i>
-                    <h2>Next Project</h2>
-                    <p>Emotional Safety on Social Platforms: A Qualitative Exploration</p>
-                </div>
-            </div>
-
         </div>
-    </main>
 
+        <div class="feature-card" onclick="smoothNavigate(this, 'genai_framework.html')">
+            <img src="images/p7.jpg" alt="Therapeutic Computing">
+            <div class="feature-overlay"></div>
+            <div class="feature-content">
+                <span class="eyebrow">Mental Health &amp; Tech</span>
+                <h3>Therapeutic Computing</h3>
+                <p>AI-assisted visualization framework for trauma-informed therapy.</p>
+            </div>
+        </div>
 
+        <div class="feature-card placeholder">
+            <img src="images/next.jpg" alt="Next project">
+            <div class="feature-overlay"></div>
+            <div class="feature-content">
+                <i class="fas fa-plus-circle"></i>
+                <h3>Next Project</h3>
+                <p>Emotional Safety on Social Platforms: A Qualitative Exploration</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="block-title" style="max-width: none;">Additional Projects</h3>
+    <div class="mini-grid">
+        <div class="mini-card">
+            <h4>Medical Records Digitization Pipeline</h4>
+            <p><strong>Problem:</strong> Paper-based records block access to patients' long-term medical history at point of care.</p>
+            <p><strong>Solution:</strong> LLM-powered OCR system for automated clinical data extraction.</p>
+            <p><strong>Impact:</strong> Improves patient safety and treatment accuracy through timely access to historical clinical data.</p>
+            <a href="images/digitization.mp4" class="btn" style="margin-top: 0.6rem;"><i class="fas fa-video"></i> Watch Demo</a>
+        </div>
+
+        <div class="mini-card">
+            <h4>AI Symptom Checker &amp; CDSS</h4>
+            <p><strong>Problem:</strong> Many patients face difficulty articulating their symptoms and identifying the right specialist.</p>
+            <p><strong>Solution:</strong> A symptom checker that suggests relevant symptoms, asks targeted follow-up questions, and provides provisional diagnoses with specialist recommendations.</p>
+            <p><strong>Impact:</strong> 81% diagnostic accuracy validated against physician assessments across 185 simulated patient cases.</p>
+            <img src="images/symptom_checker.png" alt="Symptom checker interface">
+            <a href="images/Symptom_Checker.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
+        </div>
+
+        <div class="mini-card">
+            <h4>Medical History-Driven Dietary Recommendation System</h4>
+            <p><strong>Problem:</strong> Gap between visual food recognition technology and personalized medical dietary counseling for chronic disease management.</p>
+            <p><strong>Solution:</strong> Integrated computer vision-based food classification with medical knowledge systems for condition-specific dietary filtering and recommendations.</p>
+            <p><strong>Impact:</strong> Enables real-time food guidance, improving patient adherence to dietary restrictions for chronic conditions.</p>
+            <img src="images/food.png" alt="Dietary guidance interface">
+            <a href="images/Food_Guidance.mp4" class="btn"><i class="fas fa-video"></i> Watch Demo</a>
+        </div>
+
+        <div class="mini-card">
+            <h4>Medical Assistant Chatbot</h4>
+            <p><strong>Problem:</strong> Users need to describe symptoms and access care without navigating complex interfaces.</p>
+            <p><strong>Solution:</strong> Began as a RASA-based intent classifier for mental vs. physical health triage; evolved into an LLM-powered assistant serving as AmarDoctor's primary entry point for symptom assessment, appointment booking, and care navigation.</p>
+            <img src="images/ss.png" alt="Chatbot interface">
+            <a href="https://github.com/OceanRahan/medical-assistant-chatbot" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+
+        <div class="mini-card">
+            <h4>Bengali OCR Using Deep Learning</h4>
+            <p>Developed a novel word image dataset and trained deep neural networks (CNN, RNN, LSTM) to digitize printed Bengali literature.</p>
+            <div class="tag-row" style="margin: 0.8rem 0;">
+                <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">OpenCV</span>
+            </div>
+            <a href="https://www.kaggle.com/datasets/oceanrahan/final-train" class="btn"><i class="fas fa-database"></i> Dataset</a>
+        </div>
+
+        <div class="mini-card">
+            <h4>SaaS Client Management System</h4>
+            <p>Built a JWT-authenticated platform with PostgreSQL and AWS for managing secure healthcare API access and subscription tiers.</p>
+            <div class="tag-row" style="margin: 0.8rem 0;">
+                <span class="tag">Django REST API</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">JWT</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-socials">
+        <a href="https://github.com/OceanRahan"><i class="fab fa-github"></i></a>
+        <a href="https://www.kaggle.com/oceanrahan"><i class="fab fa-kaggle"></i></a>
+        <a href="https://huggingface.co/oceanrahan"><i class="fas fa-robot"></i></a>
+        <a href="https://medium.com/@oceanrahan"><i class="fab fa-medium"></i></a>
+    </div>
+    <p>&copy; 2026 Nazmun Nahar</p>
+</footer>
 
 <script>
-  // Track the active clone so we can always find and remove it
+(function() {
+    var btn = document.getElementById('hamburger');
+    var drawer = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('drawerBackdrop');
+    function close() { btn.classList.remove('open'); drawer.classList.remove('open'); backdrop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    function openD() { btn.classList.add('open'); drawer.classList.add('open'); backdrop.classList.add('open'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    btn.addEventListener('click', function(){ drawer.classList.contains('open') ? close() : openD(); });
+    backdrop.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+</script>
+
+<script>
   let activeClone = null;
-
   function smoothNavigate(card, url) {
-    // Prevent double-clicks triggering the animation twice
     if (activeClone) return;
-
     const clone = card.cloneNode(true);
     const rect = card.getBoundingClientRect();
-
-    // Position the clone exactly over the original card
     clone.style.cssText = [
-      "position: fixed",
-      "top: " + rect.top + "px",
-      "left: " + rect.left + "px",
-      "width: " + rect.width + "px",
-      "height: " + rect.height + "px",
-      "margin: 0",
-      "z-index: 9999",
-      "border-radius: 16px",
-      "pointer-events: none",
+      "position: fixed", "top: " + rect.top + "px", "left: " + rect.left + "px",
+      "width: " + rect.width + "px", "height: " + rect.height + "px",
+      "margin: 0", "z-index: 9999", "border-radius: 16px", "pointer-events: none",
       "transition: all 0.65s cubic-bezier(.2,.8,.2,1)"
     ].join(";");
-
     document.body.appendChild(clone);
     activeClone = clone;
-
-    // Force reflow so the starting position is painted before animating
     clone.getBoundingClientRect();
-
-    // Animate the clone to fill the full viewport
-    clone.style.top = "0";
-    clone.style.left = "0";
-    clone.style.width = "100vw";
-    clone.style.height = "100vh";
+    clone.style.top = "0"; clone.style.left = "0";
+    clone.style.width = "100vw"; clone.style.height = "100vh";
     clone.style.borderRadius = "0";
-
-    // Fade the rest of the page out
-    document.body.classList.add("page-exit");
-
-    // Remove the clone BEFORE navigating so bfcache never stores it
+    document.body.classList.add("zooming");
     setTimeout(function() {
-      if (activeClone) {
-        activeClone.remove();
-        activeClone = null;
-      }
+      if (activeClone) { activeClone.remove(); activeClone = null; }
       window.location.href = url;
     }, 650);
   }
-
-  /**
-   * BFCACHE RESET
-   * Fires every time this page becomes visible — including when the
-   * user hits the Back button and the browser restores from cache.
-   */
   window.addEventListener("pageshow", function(event) {
     if (event.persisted) {
-      // Remove any clone captured in the cache snapshot
-      if (activeClone) {
-        activeClone.remove();
-        activeClone = null;
-      }
-      // Belt-and-suspenders: sweep for orphaned fixed clones
-      document.querySelectorAll(".project-card").forEach(function(el) {
+      if (activeClone) { activeClone.remove(); activeClone = null; }
+      document.querySelectorAll(".feature-card").forEach(function(el) {
         if (el.style.position === "fixed") el.remove();
       });
-
-      // Restore page to its normal visible state
-      document.body.classList.remove("page-exit");
-      document.body.style.opacity = "1";
-      document.body.style.visibility = "visible";
+      document.body.classList.remove("zooming");
     }
   });
 </script>
-
-
-
 </body>
 </html>
